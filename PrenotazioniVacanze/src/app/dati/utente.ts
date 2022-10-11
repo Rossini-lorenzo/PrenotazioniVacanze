@@ -11,6 +11,23 @@ export class Utente {
   nomeUtente !: string;
   password !: string;
 
+  constructor (email : string, nome:string, cognome:string, dataNascita:Date,
+    indirizzo:string, telefono:string, codCartaIdentita:string, sesso:string,
+    nomeUtente:string, password:string) {
+
+      this.email = email;
+      this.nome = nome;
+      this.cognome = cognome;
+      this.dataNascita = dataNascita;
+      this.indirizzo = indirizzo;
+      this.telefono = telefono;
+      this.codCartaIdentita = codCartaIdentita;
+      this.sesso = sesso;
+      this.nomeUtente = nomeUtente;
+      this.password = password;
+
+  }
+
   public getEmail() : string {
     return this.email;
   }
