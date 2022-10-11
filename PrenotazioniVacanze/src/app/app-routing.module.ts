@@ -11,9 +11,9 @@ const routes: Routes = [
   { path: '', component: CaHomeComponent },
   { path: 'registration', component:CaRegistrationComponent  },
   { path: 'login', component: CaLoginComponent },
-  { path: 'pacchetti', component:CaRegistrationComponent  },
-  { path: 'viaggi', component:CaRegistrationComponent  },
-  { path: 'alloggi', component:CaRegistrationComponent  }
+  { path: 'pacchetti', component:CaPacchettiComponent  },
+  { path: 'viaggi', component:CaViaggiComponent  },
+  { path: 'alloggi', component:CaAlloggiComponent  }
   ];
 
 @NgModule({
