@@ -8,7 +8,7 @@ import { CaViaggiComponent } from './ca-viaggi/ca-viaggi.component';
 import { CaAlloggiComponent } from './ca-alloggi/ca-alloggi.component';
 
 const routes: Routes = [
-  { path: '', component: CaHomeComponent },
+  { path: '', component: CaAlloggiComponent },
   { path: 'registration', component:CaRegistrationComponent  },
   { path: 'login', component: CaLoginComponent },
   { path: 'pacchetti', component:CaPacchettiComponent  },

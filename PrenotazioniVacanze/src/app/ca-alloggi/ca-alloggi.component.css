@@ -1,0 +1,26 @@
+table{ padding: 10px 50px 30px 50px;}
+.image{
+
+    background-image:url('../../assets/back_img.png');
+    width:auto;
+    height:auto;
+    margin: -15px -15px -15px -15px;
+    
+}
+fieldset {
+ 
+  
+  margin:50px 50px 150px 50px;
+  background-color:white;
+  padding: 10px 50px 30px 50px;
+  
+  border-radius: 20px;
+  box-shadow: 0 0 30px #666;
+}
+.card {
+  
+  width: 900px;
+  border-radius: 6px;
+  padding: 10px,10px,10px,10px;
+ 
+}
