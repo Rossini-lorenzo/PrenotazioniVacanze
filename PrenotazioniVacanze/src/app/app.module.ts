@@ -9,6 +9,7 @@ import { CaHomeComponent } from './ca-home/ca-home.component';
 import { CaPacchettiComponent } from './ca-pacchetti/ca-pacchetti.component';
 import { CaAlloggiComponent } from './ca-alloggi/ca-alloggi.component';
 import { CaViaggiComponent } from './ca-viaggi/ca-viaggi.component';
+import { CaNavbarComponent } from './ca-navbar/ca-navbar.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { CaViaggiComponent } from './ca-viaggi/ca-viaggi.component';
     CaHomeComponent,
     CaPacchettiComponent,
     CaAlloggiComponent,
-    CaViaggiComponent
+    CaViaggiComponent,
+    CaNavbarComponent
   ],
   imports: [
     BrowserModule,
