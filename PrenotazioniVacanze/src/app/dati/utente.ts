@@ -1,5 +1,11 @@
+import { NumberSymbol } from "@angular/common";
+
 export class Utente {
 
+<<<<<<< HEAD
+=======
+  idUtente : number;
+>>>>>>> c96d18b9026f20223b5dfbd810defed818383fbf
   email : string;
   nome : string;
   cognome : string;
@@ -11,10 +17,11 @@ export class Utente {
   nomeUtente : string;
   password : string;
 
-  constructor (email : string, nome:string, cognome:string, dataNascita:Date,
+  constructor (idUtente:number, email : string, nome:string, cognome:string, dataNascita:Date,
     indirizzo:string, telefono:string, codCartaIdentita:string, sesso:string,
     nomeUtente:string, password:string) {
 
+      this.idUtente = idUtente;
       this.email = email;
       this.nome = nome;
       this.cognome = cognome;
@@ -26,6 +33,10 @@ export class Utente {
       this.nomeUtente = nomeUtente;
       this.password = password;
 
+  }
+
+  public getIdUtente() : number {
+    return this.idUtente;
   }
 
   public getEmail() : string {
