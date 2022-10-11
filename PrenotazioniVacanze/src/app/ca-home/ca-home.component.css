@@ -1,14 +1,16 @@
+table{ padding: 10px 50px 30px 50px;}
 .image{
 
     background-image:url('../../assets/back_img.png');
-   
+    width:auto;
+    height:auto;
     margin: -15px -15px -15px -15px;
     
 }
 fieldset {
  
   
-  margin:0px 100px 0px 100px;
+  margin:100px 100px 0px 100px;
   background-color:white;
   padding: 10px 50px 30px 50px;
   
