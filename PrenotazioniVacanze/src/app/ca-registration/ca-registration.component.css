@@ -1,5 +1,26 @@
-form{background-image: url("https://i.etsystatic.com/19101601/r/il/30987d/4077415532/il_1588xN.4077415532_osr7.jpg");
-}
+.background-image {
+    background-image: url(
+    "https://i.etsystatic.com/19101601/r/il/30987d/4077415532/il_1588xN.4077415532_osr7.jpg");
+    background: no-repeat center center fixed; 
+    background-size: cover;
+    display: block;
+    left: -5px;
+    top:-5px;
+    bottom:-5px;
+    position: fixed;
+    right: -5px;
+    z-index: 1;
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    margin:-5px;
+  
+   }
   .title1{color:rgb(46, 134, 216); font-size:43px;
     font-family:"Lucida Console", "Courier New", monospace;}
   h1 {color:rgb(4, 104, 199); font-size:50px;
