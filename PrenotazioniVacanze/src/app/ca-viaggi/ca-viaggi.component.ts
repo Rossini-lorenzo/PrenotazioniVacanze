@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ca-viaggi.component.css']
 })
 export class CaViaggiComponent implements OnInit {
-
-  constructor() { }
-
+  viaggi:String[];
+  constructor() { 
+   this.viaggi=[];
+  }
   ngOnInit(): void {
+  }
+  cercaViaggi():void{
+    this.viaggi=["roma","milano","napoli","torino"];
   }
 
 }

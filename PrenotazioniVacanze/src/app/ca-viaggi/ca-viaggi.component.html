@@ -33,14 +33,22 @@
         <!--------------------------------------------------------------------->
 </div>
 </div>
-
+<button type="submit" name="registrazione" value="registrazione" (click)="cercaViaggi()"> Cerca </button>
 <a  href="login"><i class="fa fa-fw fa-envelope"></i> login</a>
 <a  href="registration"><i class="fa fa-fw fa-envelope"></i> registrazione</a>
 
-</fieldset>
-  </table>
+<ng-container><a *ngFor="let v of viaggi">
+  <div class="card border-secondary mb-3" style="max-width: 60rem;">
+    <div class="card-header">{{v}}</div>
+    <div class="card-body text-secondary">
+      <p class="card-text"></p> 
+      
+    </div>
+  </div>
+</a></ng-container>
+</fieldset></table></div>
 
-</div>
+
 
 
 

@@ -1,15 +1,15 @@
 export class Utente {
 
-  email !: string;
-  nome !: string;
-  cognome !: string;
-  dataNascita !: Date;
-  indirizzo !: string;
-  telefono !: string;
-  codCartaIdentita !: string;
-  sesso !: string;
-  nomeUtente !: string;
-  password !: string;
+  email : string;
+  nome : string;
+  cognome : string;
+  dataNascita : Date;
+  indirizzo : string;
+  telefono : string;
+  codCartaIdentita : string;
+  sesso : string;
+  nomeUtente : string;
+  password : string;
 
   constructor (email : string, nome:string, cognome:string, dataNascita:Date,
     indirizzo:string, telefono:string, codCartaIdentita:string, sesso:string,
