@@ -1,6 +1,15 @@
 .navbar {
   
-   
+  width: 900px;
+  height: 70px;
   border-radius: 20px;
+  padding: 10px,10px,10px,10px;
  
+}
+.pills-tab{
+  width: 900px;
+  height: 70px;
+  border-radius: 20px;
+  padding: 10px,10px,10px,10px;
+  align-items: center;
 }
