@@ -1,21 +1,18 @@
 .image{
 
     background-image:url('../../assets/back_img.png');
-
+   
     margin: -15px -15px -15px -15px;
-width:auto;
-height:auto;
-
+    
 }
 fieldset {
  
   
-    margin:100px 100px 100px 50px;
-    background-color:white;
-  margin: 20px;
+  margin:0px 100px 0px 100px;
+  background-color:white;
   padding: 10px 50px 30px 50px;
-  border: 1px solid #666;
+  
   border-radius: 20px;
   box-shadow: 0 0 30px #666;
-  padding-top: 10px;}
+}
  
