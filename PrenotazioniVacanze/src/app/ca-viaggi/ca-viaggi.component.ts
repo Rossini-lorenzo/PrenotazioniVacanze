@@ -10,6 +10,7 @@ export class CaViaggiComponent implements OnInit {
   constructor() { 
    this.viaggi=[];
   }
+  
   ngOnInit(): void {
   }
   cercaViaggi():void{
