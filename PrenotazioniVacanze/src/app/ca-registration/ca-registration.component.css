@@ -1,4 +1,15 @@
+.image{
 
+    background-image:url('../../assets/back_img.png');
+
+    margin: -15px -15px -15px -15px;
+width:auto;
+height:auto;
+
+
+
+}
+  
   .title1{color:rgb(46, 134, 216); font-size:43px;
     font-family:"Lucida Console", "Courier New", monospace;}
   h1 {color:rgb(4, 104, 199); font-size:50px;
