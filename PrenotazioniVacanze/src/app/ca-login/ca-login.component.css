@@ -44,14 +44,23 @@ height:auto;
     font-family:"Helvetica",  Sans-serif;
     border-radius: 8px;
   }
-  fieldset {
+  .esterno {
   
     background-color:white;
   margin: 20px;
-  padding: 10px 50px 30px 50px;
+  padding: 10px 0px 30px 0px;
   border: 1px solid #666;
   border-radius: 20px;
   box-shadow: 0 0 30px #666;
+}
+  .interno {
+
+    background-color:white;
+  margin: 0px 0px 0px 0px;
+  padding: 10px 80px 30px 80px;
+  border: 1px solid #666;
+  border-radius: 20px;
+box-shadow: 0 0 30px #666;
 }
 
   button{
