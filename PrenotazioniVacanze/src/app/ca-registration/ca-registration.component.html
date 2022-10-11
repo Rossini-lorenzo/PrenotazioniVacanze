@@ -1,1 +1,92 @@
-<p>ca-registration works!</p>
+<form action="action_page.php">
+ 
+    <table border="0" align = "center" cellpadding="0" cellspacing="0">
+   
+      
+      <td align = "center"><fieldset >
+    
+    <div class="container"    >
+      
+      
+      <img src="../../../img/logo.png" width="250" height="200" >
+       
+     
+    
+      
+        <fieldset>
+         
+      <h1 class = "title1"> Registrazione </h1>
+      <hr>
+      <p>Inserire i dati seguenti per effetuare la registrazione.</p>
+        
+      
+      <br>
+       
+      <label for="email"></label>
+      <input type="email" placeholder="Email" name="email" id="email" required>
+   
+      <br>
+      <label for="psw"></label>
+      <input type="password" placeholder="Password" name="psw" id="psw" required>
+      <br>
+      
+      <label for="psw-repeat"></label>
+      <input type="password" placeholder="Ripetere password" name="psw-repeat" id="psw-repeat" required>
+      <br>
+  
+      <label for="nome"></label>
+      <input type="text" placeholder="Nome" name="nome" id="nome" required>
+      
+      <br>
+      <label for="cognome"></label>
+      <input type="text" placeholder="Cognome" name="cognome" id="cognome" required>
+    
+      <br>
+      <label for="nome-utente"></label>
+      <input type="text" placeholder="Nome utente" name="nome-utente" id="nome-utente" required>
+    
+      <br>
+      <label for="indirizzo"></label>
+      <input type="text" placeholder="Indirizzo" name="indirizzo" id="indirizzo" required>
+      
+      <br>
+      <label for="carta-identita"></label>
+      <input type="text" placeholder="Numero carta identità" name="indirizzo" id="indirizzo"  required>
+      
+      <br>
+      <label for="telefono"></label>
+      <input type="tel" placeholder="Numero di telefono" name="telefono" id="telefono" required>
+      <br>
+      
+      <br>
+      <label for="data"> Inserire data di nascita : </label>
+      <br>
+  
+      <input type="date" placeholder="Inserire una data " name="data" id="data" min="1922-01-01"required>
+      <br>
+      <br>
+      <label>
+      <input type="radio" name="sex" value="male"  > Maschio
+      <input type="radio" name="sex" value="female"  > Femmina
+      </label>
+      <br>
+      <hr>
+      <br>
+      <button type="submit" name="registrazione" value="registrazione" onclick="validateForm()"> Registrati </button>
+    
+    </fieldset>
+    <br>
+      
+
+   
+      <div class="container signin">
+        <p>Hai già un account? <a href="#">Sign in</a>.</p>
+      </div>
+    </div>
+      </fieldset></td>
+   
+    </table>
+    
+    
+
+  </form>
