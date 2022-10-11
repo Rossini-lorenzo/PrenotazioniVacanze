@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-ca-login',
   templateUrl: './ca-login.component.html',
-  styleUrls: ['./ca-login.component.css']
+  styleUrls: ['../ca-registration/ca-registration.component.css']
 })
 export class CaLoginComponent implements OnInit {
 
