@@ -26,7 +26,7 @@ public class Utente {
 	
   @Id
   @GeneratedValue(strategy=GenerationType.AUTO)
-  @Column(name="utente_id")
+  @Column(name="idUtente")
   private Integer id;
   private String nome;
   private String email;
@@ -39,8 +39,8 @@ public class Utente {
   private Sesso sesso;
   private String nomeUtente;
   private String passwordUtente;
-  @OneToMany(mappedBy = "Prenotazione")
-  private List<Prenotazione> prenotazioni;
+ // @OneToMany(mappedBy = "Prenotazione")
+ // private List<Prenotazione> prenotazioni;
 public Integer getId() {
 	return id;
 }

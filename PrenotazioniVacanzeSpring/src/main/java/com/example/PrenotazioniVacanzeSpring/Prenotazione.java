@@ -27,9 +27,9 @@ public class Prenotazione {
     private int offerta;
     private int nPartecipanti;
     private String titolo;
-    @ManyToOne
-    @JoinColumn(name="committente",referencedColumnName="idUtente")
-    private List<Utente> Utenti;
+   // @ManyToOne
+   // @JoinColumn(name="committente",referencedColumnName="idUtente")
+   // private List<Utente> Utenti;
     public Integer getId() {
         return id;
     }

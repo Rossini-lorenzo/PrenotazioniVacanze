@@ -8,6 +8,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 
 
@@ -22,7 +23,7 @@ PRIMARY KEY (`codOfferta`),
 FOREIGN KEY (`vacanza`) REFERENCES Vacanza(`idVacanza`));
  */
 
-
+@Table(name="Offerta")
 @Entity // This tells Hibernate to make a table out of this class
 public class Offerta {
 	 @Id
