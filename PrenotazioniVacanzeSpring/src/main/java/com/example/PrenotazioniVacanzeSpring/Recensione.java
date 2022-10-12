@@ -15,7 +15,7 @@ import javax.persistence.Table;
 @Table(name="Recensione")
 public class Recensione {
 
-    public enum stelle {"1","2","3","4","5"};
+    public enum stelle {uno,due,tre,quattro,cinque};
     
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
