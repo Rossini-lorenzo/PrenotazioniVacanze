@@ -1,9 +1,16 @@
 package com.example.PrenotazioniVacanzeSpring;
 
+import java.util.List;
+import java.util.Set;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+@Table(name="Prenotazione")
 public class Prenotazione {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
@@ -12,6 +19,9 @@ public class Prenotazione {
     private int offerta;
     private int nPartecipanti;
     private String titolo;
+    @ManyToOne
+    @JoinColumn(name="committente",referencedColumnName="idUtente")
+    private List<Utente> Utenti;
     public Integer getId() {
         return id;
     }

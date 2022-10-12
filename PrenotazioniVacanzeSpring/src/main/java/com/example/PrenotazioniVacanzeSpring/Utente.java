@@ -1,25 +1,32 @@
 package com.example.PrenotazioniVacanzeSpring;
 
 import java.sql.Date;
+import java.util.List;
+import java.util.Set;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 
 
 
 
 @Entity // This tells Hibernate to make a table out of this class
+@Table(name = "Utente")
 public class Utente {
 	
   public enum Sesso {m,f}
 	
   @Id
   @GeneratedValue(strategy=GenerationType.AUTO)
+  @Column(name="utente_id")
   private Integer id;
   private String nome;
   private String email;
@@ -32,6 +39,8 @@ public class Utente {
   private Sesso sesso;
   private String nomeUtente;
   private String passwordUtente;
+  @OneToMany(mappedBy = "Prenotazione")
+  private List<Prenotazione> prenotazioni;
 public Integer getId() {
 	return id;
 }
