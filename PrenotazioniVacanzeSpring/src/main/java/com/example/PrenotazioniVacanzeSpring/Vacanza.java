@@ -38,10 +38,10 @@ public class Vacanza {
     private int scontoOfferto;
     
     public Integer getId() {
-        return id;
+        return idVacanza;
     }
-    public void setId(Integer id) {
-        this.id = id;
+    public void setId(Integer idVacanza) {
+        this.idVacanza = idVacanza;
     }
     public int getCodAlloggio() {
         return codAlloggio;

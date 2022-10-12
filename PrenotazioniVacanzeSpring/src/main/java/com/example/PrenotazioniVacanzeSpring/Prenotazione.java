@@ -31,10 +31,10 @@ public class Prenotazione {
    // @JoinColumn(name="committente",referencedColumnName="idUtente")
    // private List<Utente> Utenti;
     public Integer getId() {
-        return id;
+        return codPrenotazione;
     }
-    public void setId(Integer id) {
-        this.id = id;
+    public void setId(Integer codPrenotazione) {
+        this.codPrenotazione = codPrenotazione;
     }
     public int getCommittente() {
         return committente;

@@ -25,10 +25,10 @@ public class StoricoPrenotazione {
     private Date dataFine;
     
     public Integer getId() {
-        return id;
+        return idStoricoPrenotazione;
     }
-    public void setId(Integer id) {
-        this.id = id;
+    public void setId(Integer idStoricoPrenotazione) {
+        this.idStoricoPrenotazione = idStoricoPrenotazione;
     }
     public int getCommittente() {
         return committente;
