@@ -1,11 +1,6 @@
-import { NumberSymbol } from "@angular/common";
-
 export class Utente {
 
-<<<<<<< HEAD
-=======
   idUtente : number;
->>>>>>> c96d18b9026f20223b5dfbd810defed818383fbf
   email : string;
   nome : string;
   cognome : string;
