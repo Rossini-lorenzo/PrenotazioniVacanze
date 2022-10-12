@@ -2,6 +2,7 @@ package com.example.PrenotazioniVacanzeSpring;
 
 import java.sql.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -29,8 +30,10 @@ FOREIGN KEY (`vacanza`) REFERENCES Vacanza(`idVacanza`));
 public class Offerta {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="codOfferta")
     private Integer codOfferta;
     private Integer prezzo;
+    private Integer vacanza;
     private Date DateInizio;
     private Date DataFine;
     
@@ -45,6 +48,12 @@ public class Offerta {
     }
     public void setPrezzo(Integer prezzo) {
         this.prezzo = prezzo;
+    }
+    public Integer getVacanza() {
+        return vacanza;
+    }
+    public void setVacanza(Integer vacanza) {
+        this.vacanza = vacanza;
     }
     public Date getDateInizio() {
         return DateInizio;

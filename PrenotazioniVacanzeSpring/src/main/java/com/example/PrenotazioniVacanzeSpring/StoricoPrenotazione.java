@@ -2,6 +2,7 @@ package com.example.PrenotazioniVacanzeSpring;
 
 import java.sql.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,6 +15,7 @@ public class StoricoPrenotazione {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
+    @Column(name="idStoricoPrenotazione")
     private Integer idStoricoPrenotazione;
     private int committente;
     private int prenotazione;

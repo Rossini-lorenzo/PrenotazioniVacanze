@@ -2,6 +2,7 @@ package com.example.PrenotazioniVacanzeSpring;
 
 import java.sql.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -18,6 +19,7 @@ public class Recensione {
     
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
+    @Column(name="idRecensione")
     private Integer idRecensione;
     private int codAlloggio;
     private String commento;
