@@ -17,12 +17,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Table(name="Prenotazione")
 @Entity
+@Table(name="Prenotazione")
 public class Prenotazione {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    private Integer id;
+    private Integer codPrenotazione;
     private int committente;
     private int offerta;
     private int nPartecipanti;

@@ -23,15 +23,40 @@ PRIMARY KEY (`codOfferta`),
 FOREIGN KEY (`vacanza`) REFERENCES Vacanza(`idVacanza`));
  */
 
-@Table(name="Offerta")
+
 @Entity // This tells Hibernate to make a table out of this class
+@Table(name = "Offerta")
 public class Offerta {
-	 @Id
-	 @GeneratedValue(strategy=GenerationType.AUTO)
-	 private Integer codOfferta;
-	 private Integer prezzo;
-	 private Date DateInizio;
-	 private Date DataFine;
-	 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer codOfferta;
+    private Integer prezzo;
+    private Date DateInizio;
+    private Date DataFine;
+    
+    public Integer getCodOfferta() {
+        return codOfferta;
+    }
+    public void setCodOfferta(Integer codOfferta) {
+        this.codOfferta = codOfferta;
+    }
+    public Integer getPrezzo() {
+        return prezzo;
+    }
+    public void setPrezzo(Integer prezzo) {
+        this.prezzo = prezzo;
+    }
+    public Date getDateInizio() {
+        return DateInizio;
+    }
+    public void setDateInizio(Date dateInizio) {
+        DateInizio = dateInizio;
+    }
+    public Date getDataFine() {
+        return DataFine;
+    }
+    public void setDataFine(Date dataFine) {
+        DataFine = dataFine;
+    }
 
 }

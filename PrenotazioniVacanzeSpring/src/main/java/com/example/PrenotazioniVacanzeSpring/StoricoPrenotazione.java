@@ -14,7 +14,7 @@ public class StoricoPrenotazione {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    private Integer id;
+    private Integer idStoricoPrenotazione;
     private int committente;
     private int prenotazione;
     private int nPartecipanti;
@@ -23,6 +23,7 @@ public class StoricoPrenotazione {
     private String descrizione;
     private Date dataInizio;
     private Date dataFine;
+    
     public Integer getId() {
         return id;
     }

@@ -17,7 +17,7 @@ public class Vacanza {
     
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    private Integer id;
+    private Integer idVacanza;
     private int codAlloggio;
     private int codViaggio;
     private int codPacchetto;
