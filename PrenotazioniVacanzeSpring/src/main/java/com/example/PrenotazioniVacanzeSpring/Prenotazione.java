@@ -25,7 +25,6 @@ public class Prenotazione {
     @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name="codPrenotazione")
     private Integer codPrenotazione;
-    private int committente;
 
     private int nPartecipanti;
     private String titolo;
@@ -47,13 +46,6 @@ public class Prenotazione {
 		this.codPrenotazione = codPrenotazione;
 	}
 
-	public int getCommittente() {
-		return committente;
-	}
-
-	public void setCommittente(int committente) {
-		this.committente = committente;
-	}
 
 	public int getnPartecipanti() {
 		return nPartecipanti;
@@ -80,6 +72,14 @@ public class Prenotazione {
 	}
 
 	
+
+	public StoricoPrenotazione getStoricoPrenotazione() {
+		return storicoPrenotazione;
+	}
+
+	public void setStoricoPrenotazione(StoricoPrenotazione storicoPrenotazione) {
+		this.storicoPrenotazione = storicoPrenotazione;
+	}
 
 	public Offerta getOfferta() {
 		return offerta;

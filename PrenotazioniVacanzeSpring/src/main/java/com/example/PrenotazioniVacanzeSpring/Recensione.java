@@ -23,7 +23,7 @@ public class Recensione {
     @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name="idRecensione")
     private Integer idRecensione;
-    private int codAlloggio;
+
     private String commento;
     @Enumerated(EnumType.STRING)
     private stelle stelle;
@@ -33,18 +33,19 @@ public class Recensione {
     @JoinColumn(name="idVacanza")
      private Vacanza Vacanza;
     
-    public Integer getIdRecensione() {
+    public Vacanza getVacanza() {
+		return Vacanza;
+	}
+	public void setVacanza(Vacanza vacanza) {
+		Vacanza = vacanza;
+	}
+	public Integer getIdRecensione() {
         return idRecensione;
     }
     public void setIdRecensione(Integer idRecensione) {
         this.idRecensione = idRecensione;
     }
-    public int getCodAlloggio() {
-        return codAlloggio;
-    }
-    public void setCodAlloggio(int codAlloggio) {
-        this.codAlloggio = codAlloggio;
-    }
+   
     public String getCommento() {
         return commento;
     }

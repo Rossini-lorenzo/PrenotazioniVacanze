@@ -11,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 @Table(name="Vacanza")
@@ -18,35 +19,90 @@ import javax.persistence.Table;
 public class Vacanza {
     
     public enum tipoMezzo {pullman,treno,aereo};
-    
+    public enum pensione{Completa,Mezza,No}
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name="idVacanza")
     private Integer idVacanza;
-    private int codAlloggio;
+    public pensione getPensione() {
+		return pensione;
+	}
+	public void setPensione(pensione pensione) {
+		this.pensione = pensione;
+	}
+	private int codAlloggio;
     private int codViaggio;
     private int codPacchetto;
     private String destinazione;
     private String descrizione;
+    @Enumerated(EnumType.STRING)
+    private pensione pensione;
     private int nMaxPartecipanti;
     private int nStanzeLetto;
     private int nBagni;
     private int nLetti;
-    private Date orarioPartenza;
-    private Date orarioArrivo;
+    private Double orarioPartenza;
+    private Double orarioArrivo;
     private int nBiglietti;
-    private String luogoPartenza;
+    private String luogoArrivo;
+    public String getLuogoArrivo() {
+		return luogoArrivo;
+	}
+	public void setLuogoArrivo(String luogoArrivo) {
+		this.luogoArrivo = luogoArrivo;
+	}
+	private String luogoPartenza;
     @Enumerated(EnumType.STRING)
     private tipoMezzo tipoMezzo;
     private Date dataInizio;
     private Date dataFine;
-    private int scontoOfferto;
+    private int codViaggioPacchetto;
+    private int codViaggioRitornoPacchetto;
+    private int codAlloggioPacchetto;
+	@ManyToMany
     @JoinTable(name="VACANZE_OFFERTE",
     		joinColumns={@JoinColumn(name="idVacanza")},
     		inverseJoinColumns={@JoinColumn(name="codOfferta")})
     private Set<Offerta> offerte;
     
-    @OneToMany(mappedBy="Vacanza")
+	
+    public int getCodViaggioPacchetto() {
+		return codViaggioPacchetto;
+	}
+	public void setCodViaggioPacchetto(int codViaggioPacchetto) {
+		this.codViaggioPacchetto = codViaggioPacchetto;
+	}
+	public int getCodViaggioRitornoPacchetto() {
+		return codViaggioRitornoPacchetto;
+	}
+	public void setCodViaggioRitornoPacchetto(int codViaggioRitornoPacchetto) {
+		this.codViaggioRitornoPacchetto = codViaggioRitornoPacchetto;
+	}
+	public int getCodAlloggioPacchetto() {
+		return codAlloggioPacchetto;
+	}
+	public void setCodAlloggioPacchetto(int codAlloggioPacchetto) {
+		this.codAlloggioPacchetto = codAlloggioPacchetto;
+	}
+	public Integer getIdVacanza() {
+		return idVacanza;
+	}
+	public void setIdVacanza(Integer idVacanza) {
+		this.idVacanza = idVacanza;
+	}
+	public Set<Offerta> getOfferte() {
+		return offerte;
+	}
+	public void setOfferte(Offerta offerta) {
+		this.offerte.add(offerta);
+	}
+	public Set<Recensione> getRecensioni() {
+		return recensioni;
+	}
+	public void setRecensioni(Set<Recensione> recensioni) {
+		this.recensioni = recensioni;
+	}
+	@OneToMany(mappedBy="Vacanza")
     private Set<Recensione> recensioni;
     
     public Integer getId() {
@@ -109,16 +165,16 @@ public class Vacanza {
     public void setnLetti(int nLetti) {
         this.nLetti = nLetti;
     }
-    public Date getOrarioPartenza() {
+    public Double getOrarioPartenza() {
         return orarioPartenza;
     }
-    public void setOrarioPartenza(Date orarioPartenza) {
+    public void setOrarioPartenza(Double orarioPartenza) {
         this.orarioPartenza = orarioPartenza;
     }
-    public Date getOrarioArrivo() {
+    public Double getOrarioArrivo() {
         return orarioArrivo;
     }
-    public void setOrarioArrivo(Date orarioArrivo) {
+    public void setOrarioArrivo(Double orarioArrivo) {
         this.orarioArrivo = orarioArrivo;
     }
     public int getnBiglietti() {
@@ -151,11 +207,6 @@ public class Vacanza {
     public void setDataFine(Date dataFine) {
         this.dataFine = dataFine;
     }
-    public int getScontoOfferto() {
-        return scontoOfferto;
-    }
-    public void setScontoOfferto(int scontoOfferto) {
-        this.scontoOfferto = scontoOfferto;
-    }
+   
     
 }

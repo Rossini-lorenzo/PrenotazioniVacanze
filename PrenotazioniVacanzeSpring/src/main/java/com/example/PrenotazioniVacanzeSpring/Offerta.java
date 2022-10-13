@@ -38,7 +38,6 @@ public class Offerta {
     @Column(name="codOfferta")
     private Integer codOfferta;
     private Integer prezzo;
-    private Integer vacanza;
     private Date DateInizio;
     private Date DataFine;
     
@@ -48,6 +47,14 @@ public class Offerta {
     
     @ManyToMany(mappedBy="offerte")
     private Set<Vacanza> vacanze;
+
+	public Set<Vacanza> getVacanze() {
+		return vacanze;
+	}
+
+	public void setVacanze(Vacanza vacanza) {
+		this.vacanze.add(vacanza);
+	}
 
 	public Integer getCodOfferta() {
 		return codOfferta;
@@ -65,13 +72,7 @@ public class Offerta {
 		this.prezzo = prezzo;
 	}
 
-	public Integer getVacanza() {
-		return vacanza;
-	}
-
-	public void setVacanza(Integer vacanza) {
-		this.vacanza = vacanza;
-	}
+	
 
 	public Date getDateInizio() {
 		return DateInizio;
