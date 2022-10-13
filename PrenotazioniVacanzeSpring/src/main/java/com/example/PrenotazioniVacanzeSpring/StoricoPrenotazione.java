@@ -20,7 +20,7 @@ public class StoricoPrenotazione {
     @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name="idStoricoPrenotazione")
     private Integer idStoricoPrenotazione;
-    private int committente;
+  
    
     private int nPartecipanti;
     private float prezzo;
@@ -40,12 +40,7 @@ public class StoricoPrenotazione {
 	public void setIdStoricoPrenotazione(Integer idStoricoPrenotazione) {
 		this.idStoricoPrenotazione = idStoricoPrenotazione;
 	}
-	public int getCommittente() {
-		return committente;
-	}
-	public void setCommittente(int committente) {
-		this.committente = committente;
-	}
+	
 	public int getnPartecipanti() {
 		return nPartecipanti;
 	}
