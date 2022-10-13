@@ -33,7 +33,7 @@ fieldset {
 }
 
 .img1{
-  padding-left: 36%;
+  padding-left: 31%;
   
 }
 
@@ -61,6 +61,10 @@ fieldset {
 div.logreg{
   float:right;
   
+}
+div.areapersonale{
+  float:left;
+
 }
 
 input{
