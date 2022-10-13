@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CaAlloggiComponent implements OnInit {
 
-  constructor() { }
-
+  viaggi:String[];
+  constructor() { 
+   this.viaggi=[];
+  }
+  
   ngOnInit(): void {
   }
-
+  cercaViaggi():void{
+    this.viaggi=["roma","milano","napoli","torino"];
+  }
 }

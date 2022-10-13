@@ -1,46 +1,64 @@
 <div class="image">
     <table border="0" align = "center" cellpadding="0" cellspacing="0">
 <fieldset>
-    
+  <a class="img1" href=""><img src="../assets/logo.png" width="250" height="200" ></a>
+ <div class="logreg">
+  <i class="bi bi-universal-access-circle"></i><a href="login" class="link-secondary">Accedi   </a>
+  <a href="registration" class="link-secondary">Registrati</a>
+</div>
+ 
   <div class="card">
     <div class="card-header">
-      <ul class="nav nav-pills justify-content-center" id="pills-tab" role="tablist">
-        <li class="nav-item">
-          <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="alloggi" role="tab" aria-controls="pills-home" aria-selected="true">Alloggi</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="pacchetti" role="tab" aria-controls="pills-profile" aria-selected="false">Pacchetti</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link"  href="viaggi" role="tab" aria-controls="pills-contact" aria-selected="false">Viaggi</a>
-        </li>
-      </ul>
-  
+      
+
+      <div class="topnav">
+        <a href="alloggi" class="active">Alloggi</a>
+        <a href="pacchetti">Pacchetti</a>
+        <a href="viaggi">Viaggi</a>
+      </div>
+
     </div>
+
     <div class="card-body">
       <!--------------------------------------------------------------------->
-      <form>
-          <input type="text" placeholder="Destinazione" name="Destinazione" id="destinazione">
-          
-          <label>Pensione:</label><select id="pensione">
-            <option value="0" selected="selected"></option>
+      <div class="row text-center ">
+        <div class="col">
+          <label>Destinazione : </label> <input type="text" placeholder="Destinazione" name="Destinazione" id="destinazione">
+          <label>N Partecipanti : </label>  <input type="number" placeholder="Numero di partecipanti" name="nPartecipanti" id="nPartecipanti">
+         <br>
+         <br>
+         <label>Pensione : </label> <select class="selectpicker"  data-style="btn-primary">
+            <option value="0">Seleziona Pensione</option>
             <option value="1">Completa</option>
             <option value="2">Mezza</option>
             <option value="3">No</option>
           </select>
+  
+        </div>
+        <div class="col">
+         <label>N Bagni : </label> <input type="number" placeholder="Numero di bagni " name="nBagni" id="nBagni">
+         <br>
+         <label>N Letti : </label>  <input type="number" placeholder="Numero di letti" name="nLetti" id="nLetti">
+
+        </div>
+      </div>
       
-          <input type="number" placeholder="Numero di partecipanti" name="nPartecipanti" id="nPartecipanti">
-          <input type="number" placeholder="Numero di letti" name="nLetti" id="nLetti">
-          <input type="number" placeholder="Numero di bagni " name="nBagni" id="nBagni">
-          
-      </form>
+
       <!--------------------------------------------------------------------->
 </div>
 </div>
+<button type="submit" name="registrazione" value="registrazione" (click)="cercaViaggi()"> Cerca </button>
 
-<a  href="login"><i class="fa fa-fw fa-envelope"></i> login</a>
-<a  href="registration"><i class="fa fa-fw fa-envelope"></i> registrazione</a>
 
+<ng-container><a *ngFor="let v of viaggi">
+  <div class="card border-secondary mb-3" style="max-width: 60rem;">
+    <div class="card-header">{{v}}</div>
+    <div class="card-body text-secondary">
+      <p class="card-text"></p> 
+      
+    </div>
+  </div>
+</a></ng-container>
 </fieldset>
     </table>
 

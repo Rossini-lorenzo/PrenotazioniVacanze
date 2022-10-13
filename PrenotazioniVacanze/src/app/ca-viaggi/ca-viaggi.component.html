@@ -1,42 +1,42 @@
 <div class="image">
   <table border="0" align = "center" cellpadding="0" cellspacing="0">
 <fieldset>
+<a class="img1" href=""><img src="../assets/logo.png" width="250" height="200" ></a>
+<div class="logreg">
+<i class="bi bi-universal-access-circle"></i><a href="login" class="link-secondary">Accedi   </a>
+<a href="registration" class="link-secondary">Registrati</a>
+</div>
 
+<div class="card">
+  <div class="card-header">
+    
 
-
-  <div class="card">
-    <div class="card-header">
-      <ul class="nav nav-pills justify-content-center" id="pills-tab" role="tablist">
-        <li class="nav-item">
-          <a class="nav-link" href="alloggi" role="tab" aria-controls="pills-home" aria-selected="false">Alloggi</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="pacchetti" role="tab" aria-controls="pills-profile" aria-selected="false">Pacchetti</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active"  data-toggle="pill" href="viaggi" role="tab" aria-controls="pills-contact" aria-selected="true">Viaggi</a>
-        </li>
-      </ul>
-      
+    <div class="topnav">
+      <a href="alloggi" >Alloggi</a>
+      <a href="pacchetti">Pacchetti</a>
+      <a href="viaggi" class="active">Viaggi</a>
     </div>
+
+  </div>
+
+
     <div class="card-body">
         <!--------------------------------------------------------------------->
         <form>
-            <input type="text" placeholder="Partenza" name="Partenza" id="partenza">
+          <label>Partenza : </label> <input type="text" placeholder="Partenza" name="Partenza" id="partenza">
             
-            <input type="text" placeholder="Destinazione" name="Destinazione" id="destinazione">
-        
-            <input type="number" placeholder="Biglietti" name="nBiglietti" id="nBiglietti">
-            <input type="datetime" placeholder="Andata" name="Andata" id="andata">
-            <input type="datetime" placeholder="Ritorno" name="Ritorno" id="ritorno">
+          <label>Destinazione : </label> <input type="text" placeholder="Destinazione" name="Destinazione" id="destinazione">
+         <br>
+          <label>N Biglietti : </label> <input type="number" placeholder="Biglietti" name="nBiglietti" id="nBiglietti">
+          <label>Andata : </label> <input type="datetime" placeholder="Andata" name="Andata" id="andata">
+          <br>
+          <label>Ritorno : </label> <input type="datetime" placeholder="Ritorno" name="Ritorno" id="ritorno">
             
         </form>
         <!--------------------------------------------------------------------->
 </div>
 </div>
 <button type="submit" name="registrazione" value="registrazione" (click)="cercaViaggi()"> Cerca </button>
-<a  href="login"><i class="fa fa-fw fa-envelope"></i> login</a>
-<a  href="registration"><i class="fa fa-fw fa-envelope"></i> registrazione</a>
 
 <ng-container><a *ngFor="let v of viaggi">
   <div class="card border-secondary mb-3" style="max-width: 60rem;">
