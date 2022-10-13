@@ -1,96 +1,75 @@
 <div class="image">
-   
-
-<form action="action_page.php">
- 
+  <form [formGroup]="frmSignup" (submit)="submit()">
     <table border="0" align = "center" cellpadding="0" cellspacing="0">
-   
-      
       <td align = "center"><fieldset class="esterno">
-    
-    <div class="container"    >
-      
-      
-      <a href=""><img src="../assets/logo.png" width="250" height="200" ></a>
-       
-     
-    
-      
-        <fieldset class="interno">
-         
-      <h1 class = "title1"> Registrazione </h1>
-      <hr>
-      <p>Inserire i dati seguenti per effetuare la registrazione.</p>
-        
-      
-      <br>
-       
-      <label for="email"></label>
-      <input type="email" placeholder="Email" name="email" id="email" required>
-   
-      <br>
-      <label for="psw"></label>
-      <input type="password" placeholder="Password" name="psw" id="psw" required>
-      <br>
-      
-      <label for="psw-repeat"></label>
-      <input type="password" placeholder="Ripetere password" name="psw-repeat" id="psw-repeat" required>
-      <br>
-  
-      <label for="nome"></label>
-      <input type="text" placeholder="Nome" name="nome" id="nome" required>
-      
-      <br>
-      <label for="cognome"></label>
-      <input type="text" placeholder="Cognome" name="cognome" id="cognome" required>
-    
-      <br>
-      <label for="nome-utente"></label>
-      <input type="text" placeholder="Nome utente" name="nome-utente" id="nome-utente" required>
-    
-      <br>
-      <label for="indirizzo"></label>
-      <input type="text" placeholder="Indirizzo" name="indirizzo" id="indirizzo" required>
-      
-      <br>
-      <label for="carta-identita"></label>
-      <input type="text" placeholder="Numero carta identità" name="indirizzo" id="indirizzo"  required>
-      
-      <br>
-      <label for="telefono"></label>
-      <input type="tel" placeholder="Numero di telefono" name="telefono" id="telefono" required>
-      <br>
-      
-      <br>
-      <label for="data"> Inserire data di nascita : </label>
-      <br>
-  
-      <input type="date" placeholder="Inserire una data " name="data" id="data" min="1922-01-01"required>
-      <br>
-      <br>
-      <label>
-      <input type="radio" name="sex" value="male"  > Maschio
-      <input type="radio" name="sex" value="female"  > Femmina
-      </label>
-      <br>
-      <hr>
-      <br>
-      <button type="submit" name="registrazione" value="registrazione" onclick="validateForm()"> Registrati </button>
-    
-    </fieldset>
-    <br>
-      
+        <div class="container"    >
+          <a href=""><img src="../assets/logo.png" width="250" height="200" ></a>
+          <fieldset class="interno">
+            <h1 class = "title1"> Registrazione </h1><hr>
+            <p>Inserire i dati seguenti per effetuare la registrazione.</p><br>
+            <label for="email" [ngClass]="frmSignup.controls['email'].invalid ? 'text-danger' : ''">E-mail:</label>
+            <input id="email" formControlName="email" type="email" class="form-control" [ngClass]="frmSignup.controls['email'].invalid ? 'is-invalid' : ''" placeholder="Email" name="email" ><br>
+            <div class="alert-danger" >
+              <div *ngIf="frmSignup.controls['email'].hasError('required')">E-mail richiesta</div>
+              <div *ngIf="frmSignup.controls['email'].hasError('email')">Inserisci un e-mail valida</div>
+            </div>
+            <label for="password" [ngClass]="frmSignup.controls['password'].invalid ? 'text-danger' : ''">Password:</label>
+            <input id="password" formControlName="password" type="password" class="form-control" [ngClass]="frmSignup.controls['password'].invalid ? 'is-invalid' : ''" placeholder="Password" name="password"><br>
+            <div class="alert-danger">
+              <div *ngIf="frmSignup.controls['password'].hasError('required')">Password richiesta</div>
+              <div *ngIf="frmSignup.controls['password'].hasError('minlength')">Deve avere lameno 8 caratteri</div>
+              <div *ngIf="frmSignup.controls['password'].hasError('hasNumber')">Deve avere almeno un numero</div>
+            </div>
+            <label for="confirmPassword" [ngClass]="frmSignup.controls['confirmPassword'].invalid ? 'text-danger' : ''">Conferma la password:</label>
+            <input id="confirmPassword" type="password" formControlName="confirmPassword" class="form-control" [ngClass]="frmSignup.controls['confirmPassword'].invalid ? 'is-invalid' : ''" placeholder="Ripetere password" name="confirmPassword" ><br>
+            <div class="alert-danger" >
+              <div *ngIf="frmSignup.controls['confirmPassword'].hasError('required')">Password richiesta</div>
+              <div *ngIf="frmSignup.controls['confirmPassword'].hasError('NoPassswordMatch')">La password non corrispondono</div>
+            </div>
+            <label for="nome" [ngClass]="frmSignup.controls['nome'].invalid ? 'text-danger' : ''">Nome:</label>
+            <input formControlName="nome" type="text" placeholder="Nome" name="nome" id="nome" class="form-control" [ngClass]="frmSignup.controls['nome'].invalid ? 'is-invalid' : ''"><br>
+            <div class="alert-danger">
+              <div *ngIf="frmSignup.controls['nome'].hasError('required')">Nome richiesto</div>
+            </div>
+            <label for="cognome" [ngClass]="frmSignup.controls['cognome'].invalid ? 'text-danger' : ''">Cognome:</label>
+            <input formControlName="cognome" type="text" placeholder="cognome" name="cognome" id="cognome" class="form-control" [ngClass]="frmSignup.controls['cognome'].invalid ? 'is-invalid' : ''"><br>
+            <div class="alert-danger">
+              <div *ngIf="frmSignup.controls['cognome'].hasError('required')">Cognome richiesto</div>
+            </div>
+            <label for="username" [ngClass]="frmSignup.controls['username'].invalid ? 'text-danger' : ''">Username:</label>
+            <input formControlName="username"  type="text" placeholder="Nome utente" name="username" id="username" class="form-control" [ngClass]="frmSignup.controls['username'].invalid ? 'is-invalid' : ''"><br>
+            <div class="alert-danger">
+              <div *ngIf="frmSignup.controls['username'].hasError('required')">Username richiesto</div>
+            </div>
+            <label for="indirizzo" [ngClass]="frmSignup.controls['indirizzo'].invalid ? 'text-danger' : ''">Indirizzo:</label>
+            <input formControlName="indirizzo" type="text" placeholder="Indirizzo" name="indirizzo" id="indirizzo" class="form-control" [ngClass]="frmSignup.controls['indirizzo'].invalid ? 'is-invalid' : ''"><br>
+            <div class="alert-danger">
+              <div *ngIf="frmSignup.controls['indirizzo'].hasError('required')">Indirizzo richiesto</div>
+            </div>
+            <label for="cartaIdentita" [ngClass]="frmSignup.controls['cartaIdentita'].invalid ? 'text-danger' : ''">Carta d'identita:</label>
+            <input formControlName="cartaIdentita" type="text" placeholder="Numero carta identità" name="cartaIdentita" id="cartaIdentita"  class="form-control" [ngClass]="frmSignup.controls['cartaIdentita'].invalid ? 'is-invalid' : ''"><br>
+            <div class="alert-danger">
+              <div *ngIf="frmSignup.controls['cartaIdentita'].hasError('required')">Carta d'identita richiesta</div>
+            </div>
+            <label for="telefono" [ngClass]="frmSignup.controls['telefono'].invalid ? 'text-danger' : ''">Telefono</label>
+            <input formControlName="telefono" type="tel" placeholder="Numero di telefono" name="telefono" id="telefono" class="form-control" [ngClass]="frmSignup.controls['telefono'].invalid ? 'is-invalid' : ''"><br><br>
+            <div class="alert-danger">
+              <div *ngIf="frmSignup.controls['telefono'].hasError('required')">Telefono richiesto</div>
+            </div>
+            <label  for="dataNascita"> Inserire la data di nascita : </label><br>
+            <input type="date"  class="form-control" placeholder="Inserire una data " name="dataNascita" id="dataNascita" min="1922-01-01" required><br><br>
+            <label>
+                <input type="radio" name="sex" value="male"  > Maschio
+                <input type="radio" name="sex" value="female"  > Femmina
 
-   
-      <div class="container signin">
-        <p>Hai già un account? <a href="#">Sign in</a>.</p>
-      </div>
-    </div>
+            </label><br><hr><br>
+            <button [disabled]="frmSignup.invalid" type="submit" class="btn btn-primary btn-block font-weight-bold"> Registrati </button>
+          </fieldset><br>
+          <div class="container signin">
+            <p>Hai già un account? <a href="#">Sign in</a>.</p>
+          </div>
+        </div>
       </fieldset></td>
-   
     </table>
-    
-    
-
   </form>
 </div>
