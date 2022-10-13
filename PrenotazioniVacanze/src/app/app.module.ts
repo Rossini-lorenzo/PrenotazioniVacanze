@@ -11,6 +11,7 @@ import { CaPacchettiComponent } from './ca-pacchetti/ca-pacchetti.component';
 import { CaAlloggiComponent } from './ca-alloggi/ca-alloggi.component';
 import { CaViaggiComponent } from './ca-viaggi/ca-viaggi.component';
 import { CaNavbarComponent } from './ca-navbar/ca-navbar.component';
+import { CaProfiloComponent } from './ca-profilo/ca-profilo.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { CaNavbarComponent } from './ca-navbar/ca-navbar.component';
     CaPacchettiComponent,
     CaAlloggiComponent,
     CaViaggiComponent,
-    CaNavbarComponent
+    CaNavbarComponent,
+    CaProfiloComponent
   ],
   imports: [
     BrowserModule,

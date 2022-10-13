@@ -6,6 +6,7 @@ import { CaRegistrationComponent } from './ca-registration/ca-registration.compo
 import { CaPacchettiComponent } from './ca-pacchetti/ca-pacchetti.component';
 import { CaViaggiComponent } from './ca-viaggi/ca-viaggi.component';
 import { CaAlloggiComponent } from './ca-alloggi/ca-alloggi.component';
+import { CaProfiloComponent } from './ca-profilo/ca-profilo.component';
 
 const routes: Routes = [
   { path: '', component: CaAlloggiComponent },
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'login', component: CaLoginComponent },
   { path: 'pacchetti', component:CaPacchettiComponent  },
   { path: 'viaggi', component:CaViaggiComponent  },
-  { path: 'alloggi', component:CaAlloggiComponent  }
+  { path: 'alloggi', component:CaAlloggiComponent  },
+  { path: 'area_personale', component:CaProfiloComponent  }
   ];
 
 @NgModule({

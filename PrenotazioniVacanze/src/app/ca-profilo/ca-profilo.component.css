@@ -1,0 +1,91 @@
+.image{
+
+    background-image:url('../../assets/back_img.png');
+
+    margin: -15px -15px -15px -15px;
+width:auto;
+height:auto;
+
+}
+  
+  .title1{color:rgb(46, 134, 216); font-size:43px;
+    font-family:"Lucida Console", "Courier New", monospace;}
+  h1 {color:rgb(4, 104, 199); font-size:50px;
+    font-family:"Helvetica",  Sans-serif;}
+  p {color:rgb(10, 10, 10); font-size:15;
+    font-family:"Helvetica",  Sans-serif;}
+  input[type=text] {
+  border: none;
+  border-radius: 8px;
+  font-family:"Helvetica",  Sans-serif;
+  line-height: 30px;
+  border-bottom: 2px solid rgb(128, 128, 128);}
+  input[type=tel] {
+    font-family:"Helvetica",  Sans-serif;
+  border: none;
+  border-radius: 8px;
+  line-height: 30px;
+  border-bottom: 2px solid rgb(128, 128, 128);}
+  input[type=password] {
+    font-family:"Helvetica",  Sans-serif;
+  border: none;
+  border-radius: 8px;
+  line-height: 30px;
+  border-bottom: 2px solid rgb(128, 128, 128);}
+  input[type=email] {
+    font-family:"Helvetica",  Sans-serif;
+  border: none;
+  border-radius: 8px;
+  line-height: 30px;
+  border-bottom: 2px solid rgb(128, 128, 128);}
+  label{line-height: 25px;}
+  input[type=date] {
+    font-size:15;
+    font-family:"Helvetica",  Sans-serif;
+    border-radius: 8px;
+  }
+  .esterno {
+  
+    background-color:white;
+  margin: 20px;
+  padding: 10px 0px 30px 0px;
+  border: 1px solid #666;
+  border-radius: 20px;
+  box-shadow: 0 0 30px #666;
+}
+  .interno {
+
+    background-color:white;
+  margin: 0px 0px 0px 0px;
+  padding: 10px 70px 30px 70px;
+  border: 1px solid #666;
+  border-radius: 20px;
+box-shadow: 0 0 30px #666;
+}
+  input[type=radio]{
+    font-family:"Helvetica",  Sans-serif;
+    
+    
+  }
+  button{
+    background-color: white;
+  color: rgb(46, 134, 216);
+  font-family:"Helvetica",  Sans-serif;
+  border: 2px solid rgb(46, 134, 216); /* Green */
+  transition-duration: 0.4s;
+  font-size:25;
+  border-radius: 20px;
+
+  }
+  button:hover{
+    background-color: rgb(46, 134, 216); /* Green */
+    font-family:"Helvetica",  Sans-serif;
+    color: white;
+    font-size:25;
+    border-radius: 20px;
+
+  }
+  label{
+    font-family:"Helvetica",  Sans-serif;
+    font-size:15;
+  }
