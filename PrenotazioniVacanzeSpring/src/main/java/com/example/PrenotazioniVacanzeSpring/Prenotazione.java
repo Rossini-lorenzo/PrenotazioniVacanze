@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -25,41 +26,70 @@ public class Prenotazione {
     @Column(name="codPrenotazione")
     private Integer codPrenotazione;
     private int committente;
-    private int offerta;
+
     private int nPartecipanti;
     private String titolo;
-   // @ManyToOne
-   // @JoinColumn(name="committente",referencedColumnName="idUtente")
-   // private List<Utente> Utenti;
-    public Integer getId() {
-        return codPrenotazione;
-    }
-    public void setId(Integer codPrenotazione) {
-        this.codPrenotazione = codPrenotazione;
-    }
-    public int getCommittente() {
-        return committente;
-    }
-    public void setCommittente(int committente) {
-        this.committente = committente;
-    }
-    public int getOfferta() {
-        return offerta;
-    }
-    public void setOfferta(int offerta) {
-        this.offerta = offerta;
-    }
-    public int getnPartecipanti() {
-        return nPartecipanti;
-    }
-    public void setnPartecipanti(int nPartecipanti) {
-        this.nPartecipanti = nPartecipanti;
-    }
-    public String getTitolo() {
-        return titolo;
-    }
-    public void setTitolo(String titolo) {
-        this.titolo = titolo;
-    }
+    @ManyToOne
+   @JoinColumn(name="IdUtente")
+    private Utente Utente;
+    
+    @OneToOne(mappedBy="prenotazione")
+    private StoricoPrenotazione storicoPrenotazione;
+    
+    @OneToOne(mappedBy="prenotazione")
+    private Offerta offerta;
+
+	public Integer getCodPrenotazione() {
+		return codPrenotazione;
+	}
+
+	public void setCodPrenotazione(Integer codPrenotazione) {
+		this.codPrenotazione = codPrenotazione;
+	}
+
+	public int getCommittente() {
+		return committente;
+	}
+
+	public void setCommittente(int committente) {
+		this.committente = committente;
+	}
+
+	public int getnPartecipanti() {
+		return nPartecipanti;
+	}
+
+	public void setnPartecipanti(int nPartecipanti) {
+		this.nPartecipanti = nPartecipanti;
+	}
+
+	public String getTitolo() {
+		return titolo;
+	}
+
+	public void setTitolo(String titolo) {
+		this.titolo = titolo;
+	}
+
+	public Utente getUtente() {
+		return Utente;
+	}
+
+	public void setUtente(Utente utente) {
+		Utente = utente;
+	}
+
+	
+
+	public Offerta getOfferta() {
+		return offerta;
+	}
+
+	public void setOfferta(Offerta offerta) {
+		this.offerta = offerta;
+	}
+    
+    
+   
     
 }

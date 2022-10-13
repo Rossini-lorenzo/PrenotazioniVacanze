@@ -9,13 +9,15 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="Recensione")
 public class Recensione {
 
-    public enum stelle {"1","2","3","4","5"};
+    public enum stelle {uno,due,tre,quattro,cinque};
     
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
@@ -26,6 +28,10 @@ public class Recensione {
     @Enumerated(EnumType.STRING)
     private stelle stelle;
     private Date data;
+    
+    @ManyToOne
+    @JoinColumn(name="idVacanza")
+     private Vacanza Vacanza;
     
     public Integer getIdRecensione() {
         return idRecensione;

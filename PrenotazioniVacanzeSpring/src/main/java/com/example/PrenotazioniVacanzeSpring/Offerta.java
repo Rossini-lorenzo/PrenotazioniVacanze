@@ -1,6 +1,7 @@
 package com.example.PrenotazioniVacanzeSpring;
 
 import java.sql.Date;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,6 +10,10 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 
@@ -37,35 +42,64 @@ public class Offerta {
     private Date DateInizio;
     private Date DataFine;
     
-    public Integer getCodOfferta() {
-        return codOfferta;
-    }
-    public void setCodOfferta(Integer codOfferta) {
-        this.codOfferta = codOfferta;
-    }
-    public Integer getPrezzo() {
-        return prezzo;
-    }
-    public void setPrezzo(Integer prezzo) {
-        this.prezzo = prezzo;
-    }
-    public Integer getVacanza() {
-        return vacanza;
-    }
-    public void setVacanza(Integer vacanza) {
-        this.vacanza = vacanza;
-    }
-    public Date getDateInizio() {
-        return DateInizio;
-    }
-    public void setDateInizio(Date dateInizio) {
-        DateInizio = dateInizio;
-    }
-    public Date getDataFine() {
-        return DataFine;
-    }
-    public void setDataFine(Date dataFine) {
-        DataFine = dataFine;
-    }
+    @OneToOne
+    @JoinColumn(name = "codPrenotazione")
+    private Prenotazione prenotazione;
+    
+    @ManyToMany(mappedBy="offerte")
+    private Set<Vacanza> vacanze;
+
+	public Integer getCodOfferta() {
+		return codOfferta;
+	}
+
+	public void setCodOfferta(Integer codOfferta) {
+		this.codOfferta = codOfferta;
+	}
+
+	public Integer getPrezzo() {
+		return prezzo;
+	}
+
+	public void setPrezzo(Integer prezzo) {
+		this.prezzo = prezzo;
+	}
+
+	public Integer getVacanza() {
+		return vacanza;
+	}
+
+	public void setVacanza(Integer vacanza) {
+		this.vacanza = vacanza;
+	}
+
+	public Date getDateInizio() {
+		return DateInizio;
+	}
+
+	public void setDateInizio(Date dateInizio) {
+		DateInizio = dateInizio;
+	}
+
+	public Date getDataFine() {
+		return DataFine;
+	}
+
+	public void setDataFine(Date dataFine) {
+		DataFine = dataFine;
+	}
+
+	public Prenotazione getPrenotazione() {
+		return prenotazione;
+	}
+
+	public void setPrenotazione(Prenotazione prenotazione) {
+		this.prenotazione = prenotazione;
+	}
+
+	
+    
+    
+   
 
 }

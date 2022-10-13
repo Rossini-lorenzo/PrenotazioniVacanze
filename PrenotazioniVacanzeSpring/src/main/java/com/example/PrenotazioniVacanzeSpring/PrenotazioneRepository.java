@@ -1,5 +1,9 @@
 package com.example.PrenotazioniVacanzeSpring;
 
-public interface PrenotazioneRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
+
+
+public interface PrenotazioneRepository extends JpaRepository<Prenotazione, Integer> {
 
 }

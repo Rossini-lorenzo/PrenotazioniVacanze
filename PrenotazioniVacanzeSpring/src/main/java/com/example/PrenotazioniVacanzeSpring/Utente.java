@@ -26,8 +26,8 @@ public class Utente {
 	
   @Id
   @GeneratedValue(strategy=GenerationType.AUTO)
-  @Column(name="idUtente")
-  private Integer idUtente;
+  @Column(name="IdUtente")
+  private Integer id;
   private String nome;
   private String email;
   private String cognome;
@@ -39,77 +39,88 @@ public class Utente {
   private Sesso sesso;
   private String nomeUtente;
   private String passwordUtente;
- // @OneToMany(mappedBy = "Prenotazione")
- // private List<Prenotazione> prenotazioni;
-  
-    public Integer getId() {
-    	return idUtente;
-    }
-    public void setId(Integer idUtente) {
-    	this.idUtente = idUtente;
-    }
-    public String getNome() {
-    	return nome;
-    }
-    public void setNome(String nome) {
-    	this.nome = nome;
-    }
-    public String getEmail() {
-    	return email;
-    }
-    public void setEmail(String email) {
-    	this.email = email;
-    }
-    public String getCognome() {
-    	return cognome;
-    }
-    public void setCognome(String cognome) {
-    	this.cognome = cognome;
-    }
-    public Date getDataNascita() {
-    	return dataNascita;
-    }
-    public void setDataNascita(Date dataNascita) {
-    	this.dataNascita = dataNascita;
-    }
-    public String getIndirizzo() {
-    	return indirizzo;
-    }
-    public void setIndirizzo(String indirizzo) {
-    	this.indirizzo = indirizzo;
-    }
-    public String getTelefono() {
-    	return telefono;
-    }
-    public void setTelefono(String telefono) {
-    	this.telefono = telefono;
-    }
-    public String getCodiceCartaIdentita() {
-    	return codiceCartaIdentita;
-    }
-    public void setCodiceCartaIdentita(String codiceCartaIdentita) {
-    	this.codiceCartaIdentita = codiceCartaIdentita;
-    }
-    public Sesso getSesso() {
-    	return sesso;
-    }
-    public void setSesso(Sesso sesso) {
-    	this.sesso = sesso;
-    }
-    public String getNomeUtente() {
-    	return nomeUtente;
-    }
-    public void setNomeUtente(String nomeUtente) {
-    	this.nomeUtente = nomeUtente;
-    }
-    public String getPasswordUtente() {
-    	return passwordUtente;
-    }
-    public void setPasswordUtente(String passwordUtente) {
-    	this.passwordUtente = passwordUtente;
-    }
-
-
+  @OneToMany(mappedBy="Utente")
+  private Set<Prenotazione> prenotazioni;
+  @OneToMany(mappedBy="Utente")
+  private Set<StoricoPrenotazione> storicoPrenotazioni;
+public Integer getId() {
+	return id;
+}
+public void setId(Integer id) {
+	this.id = id;
+}
+public String getNome() {
+	return nome;
+}
+public void setNome(String nome) {
+	this.nome = nome;
+}
+public String getEmail() {
+	return email;
+}
+public void setEmail(String email) {
+	this.email = email;
+}
+public String getCognome() {
+	return cognome;
+}
+public void setCognome(String cognome) {
+	this.cognome = cognome;
+}
+public Date getDataNascita() {
+	return dataNascita;
+}
+public void setDataNascita(Date dataNascita) {
+	this.dataNascita = dataNascita;
+}
+public String getIndirizzo() {
+	return indirizzo;
+}
+public void setIndirizzo(String indirizzo) {
+	this.indirizzo = indirizzo;
+}
+public String getTelefono() {
+	return telefono;
+}
+public void setTelefono(String telefono) {
+	this.telefono = telefono;
+}
+public String getCodiceCartaIdentita() {
+	return codiceCartaIdentita;
+}
+public void setCodiceCartaIdentita(String codiceCartaIdentita) {
+	this.codiceCartaIdentita = codiceCartaIdentita;
+}
+public Sesso getSesso() {
+	return sesso;
+}
+public void setSesso(Sesso sesso) {
+	this.sesso = sesso;
+}
+public String getNomeUtente() {
+	return nomeUtente;
+}
+public void setNomeUtente(String nomeUtente) {
+	this.nomeUtente = nomeUtente;
+}
+public String getPasswordUtente() {
+	return passwordUtente;
+}
+public void setPasswordUtente(String passwordUtente) {
+	this.passwordUtente = passwordUtente;
+}
+public Set<Prenotazione> getPrenotazioni() {
+	return prenotazioni;
+}
+public void setPrenotazioni(Set<Prenotazione> prenotazioni) {
+	this.prenotazioni = prenotazioni;
+}
+public Set<StoricoPrenotazione> getStoricoPrenotazioni() {
+	return storicoPrenotazioni;
+}
+public void setStoricoPrenotazioni(Set<StoricoPrenotazione> storicoPrenotazioni) {
+	this.storicoPrenotazioni = storicoPrenotazioni;
+}
 
  
 }
