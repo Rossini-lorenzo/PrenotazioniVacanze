@@ -14,6 +14,7 @@ import { CaViaggiComponent } from './ca-viaggi/ca-viaggi.component';
 import { CaNavbarComponent } from './ca-navbar/ca-navbar.component';
 import { CaProfiloComponent } from './ca-profilo/ca-profilo.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CaPrenotazioniComponent } from './ca-prenotazioni/ca-prenotazioni.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { HttpClientModule } from '@angular/common/http';
     CaViaggiComponent,
     CaNavbarComponent,
     CaProfiloComponent,
+    CaPrenotazioniComponent,
     
   ],
   imports: [
