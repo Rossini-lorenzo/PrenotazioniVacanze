@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CustomValidators } from '../costum-validation';
 
+
 @Component({
   selector: 'app-ca-registration',
   templateUrl: './ca-registration.component.html',
@@ -9,6 +10,19 @@ import { CustomValidators } from '../costum-validation';
 })
 export class CaRegistrationComponent implements OnInit {
   public frmSignup: FormGroup;
+  form: any = {
+    email: null,
+    password: null,
+    confirmPassword: null,
+    nome: null,
+    cognome: null,
+    username: null,
+    indirizzo: null,
+    cartaIdentita: null,
+    telefono: null,
+    dataNascita: null,
+    sex: null
+  }
   isSuccessful = false;
   isSignUpFailed = false;
   errorMessage = "";
@@ -19,6 +33,7 @@ export class CaRegistrationComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
   createSignupForm(): FormGroup {
     return this.fb.group(
       {
@@ -71,10 +86,22 @@ export class CaRegistrationComponent implements OnInit {
 
   }
 
-  submit () {
-    const { email, password, confirmpassword } = this.frmSignup.value;
-
-    console.log({      next: data => {
+  onSubmit () : void {
+    const {  email, password, nome, cognome,
+      userName, indirizzo, cartaIdentita, telefono, dataNascita, sex} = this.frmSignup.value;
+    /*this.authService.register(
+      email,
+      password,
+      nome,
+      cognome,
+      userName,
+      indirizzo,
+      cartaIdentita,
+      telefono,
+      dataNascita,
+      sex
+      ).subscribe({
+      next: data => {
         console.log(data);
         this.isSuccessful = true;
         this.isSignUpFailed = false;
@@ -83,7 +110,8 @@ export class CaRegistrationComponent implements OnInit {
         this.errorMessage = err.error.message;
         this.isSignUpFailed = true;
       }
-    });
+    });*/
   }
-
 }
+
+
