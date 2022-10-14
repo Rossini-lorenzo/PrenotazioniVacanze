@@ -13,6 +13,7 @@ import { CaAlloggiComponent } from './ca-alloggi/ca-alloggi.component';
 import { CaViaggiComponent } from './ca-viaggi/ca-viaggi.component';
 import { CaNavbarComponent } from './ca-navbar/ca-navbar.component';
 import { CaProfiloComponent } from './ca-profilo/ca-profilo.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -25,13 +26,15 @@ import { CaProfiloComponent } from './ca-profilo/ca-profilo.component';
     CaAlloggiComponent,
     CaViaggiComponent,
     CaNavbarComponent,
-    CaProfiloComponent
+    CaProfiloComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
