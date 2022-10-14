@@ -1,5 +1,6 @@
 package com.example.PrenotazioniVacanzeSpring;
 
+import java.io.Serializable;
 import java.sql.Date;
 import java.util.List;
 import java.util.Set;
@@ -20,7 +21,7 @@ import javax.persistence.Table;
 
 @Entity // This tells Hibernate to make a table out of this class
 @Table(name = "Utente")
-public class Utente {
+public class Utente implements Serializable{
 	
   public enum Sesso {m,f}
 	
@@ -43,6 +44,28 @@ public class Utente {
   private Set<Prenotazione> prenotazioni;
   @OneToMany(mappedBy="Utente")
   private Set<StoricoPrenotazione> storicoPrenotazioni;
+  
+  public Utente() {}
+  
+public Utente(Integer id, String nome, String email, String cognome, Date dataNascita, String indirizzo,
+		String telefono, String codiceCartaIdentita, Sesso sesso, String nomeUtente, String passwordUtente,
+		Set<Prenotazione> prenotazioni, Set<StoricoPrenotazione> storicoPrenotazioni) {
+	super();
+	this.id = id;
+	this.nome = nome;
+	this.email = email;
+	this.cognome = cognome;
+	this.dataNascita = dataNascita;
+	this.indirizzo = indirizzo;
+	this.telefono = telefono;
+	this.codiceCartaIdentita = codiceCartaIdentita;
+	this.sesso = sesso;
+	this.nomeUtente = nomeUtente;
+	this.passwordUtente = passwordUtente;
+	this.prenotazioni = prenotazioni;
+	this.storicoPrenotazioni = storicoPrenotazioni;
+}
+
 public Integer getId() {
 	return id;
 }

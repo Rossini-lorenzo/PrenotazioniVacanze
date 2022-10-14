@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CustomValidators } from '../costum-validation';
-
+import { Utente } from '../dati/utente';
+import { UtenteService } from '../utente.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ca-registration',
@@ -23,11 +25,13 @@ export class CaRegistrationComponent implements OnInit {
     dataNascita: null,
     sex: null
   }
+  utente: Utente = null;
+  
   isSuccessful = false;
   isSignUpFailed = false;
   errorMessage = "";
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder,private serviceUtente : UtenteService,private router :Router) {
     this.frmSignup = this.createSignupForm();
    }
 
@@ -89,7 +93,17 @@ export class CaRegistrationComponent implements OnInit {
   onSubmit () : void {
     const {  email, password, nome, cognome,
       userName, indirizzo, cartaIdentita, telefono, dataNascita, sex} = this.frmSignup.value;
-    /*this.authService.register(
+      this.utente = new Utente(email,nome,cognome,dataNascita,indirizzo,telefono,cartaIdentita,sex,userName,password);
+      this.serviceUtente.creataUtente(this.utente).subscribe(
+        (response:any)=>{console.log("ok")}
+      )
+       
+    
+    
+    
+    
+    
+        /*this.authService.register(
       email,
       password,
       nome,

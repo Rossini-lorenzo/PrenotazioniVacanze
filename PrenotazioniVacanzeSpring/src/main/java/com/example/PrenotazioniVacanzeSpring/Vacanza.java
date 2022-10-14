@@ -24,12 +24,7 @@ public class Vacanza {
     @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name="idVacanza")
     private Integer idVacanza;
-    public pensione getPensione() {
-		return pensione;
-	}
-	public void setPensione(pensione pensione) {
-		this.pensione = pensione;
-	}
+    
 	private int codAlloggio;
     private int codViaggio;
     private int codPacchetto;
@@ -45,12 +40,6 @@ public class Vacanza {
     private Double orarioArrivo;
     private int nBiglietti;
     private String luogoArrivo;
-    public String getLuogoArrivo() {
-		return luogoArrivo;
-	}
-	public void setLuogoArrivo(String luogoArrivo) {
-		this.luogoArrivo = luogoArrivo;
-	}
 	private String luogoPartenza;
     @Enumerated(EnumType.STRING)
     private tipoMezzo tipoMezzo;
@@ -64,7 +53,9 @@ public class Vacanza {
     		joinColumns={@JoinColumn(name="idVacanza")},
     		inverseJoinColumns={@JoinColumn(name="codOfferta")})
     private Set<Offerta> offerte;
-    
+	
+	@OneToMany(mappedBy="Vacanza")
+    private Set<Recensione> recensioni;
 	
     public int getCodViaggioPacchetto() {
 		return codViaggioPacchetto;
@@ -102,8 +93,7 @@ public class Vacanza {
 	public void setRecensioni(Set<Recensione> recensioni) {
 		this.recensioni = recensioni;
 	}
-	@OneToMany(mappedBy="Vacanza")
-    private Set<Recensione> recensioni;
+	
     
     public Integer getId() {
         return idVacanza;
@@ -207,6 +197,17 @@ public class Vacanza {
     public void setDataFine(Date dataFine) {
         this.dataFine = dataFine;
     }
-   
+    public pensione getPensione() {
+		return pensione;
+	}
+	public void setPensione(pensione pensione) {
+		this.pensione = pensione;
+	}
+	public String getLuogoArrivo() {
+		return luogoArrivo;
+	}
+	public void setLuogoArrivo(String luogoArrivo) {
+		this.luogoArrivo = luogoArrivo;
+	}
     
 }

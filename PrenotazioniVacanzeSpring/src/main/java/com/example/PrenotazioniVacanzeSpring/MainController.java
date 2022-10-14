@@ -7,9 +7,13 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -34,14 +38,14 @@ public class MainController {
   private OffertaRepository offertaRepository;
 
   // AGGIUNTA NUOVO UTENTE 
+  @CrossOrigin(origins="*")
   @PostMapping(path="/addUser") // Map ONLY POST Requests
-  public @ResponseBody String addNewUser (@RequestParam String nome
-      , @RequestParam String email,@RequestParam String cognome,@RequestParam Date dataNascita,
-      @RequestParam String indirizzo,@RequestParam String telefono,@RequestParam String codiceCartaIdentita,
-      @RequestParam Sesso sesso,@RequestParam String nomeUtente,@RequestParam String passwordUtente) {
+  public ResponseEntity<Object> addNewUser (@RequestBody Utente utente) {
     // @ResponseBody means the returned String is the n, not a view name
     // @RequestParam means it is a parameter from the GET or POST request
-    Utente n = new Utente();
+    
+    
+    /*
     n.setNome(nome);
     n.setEmail(email);
     n.setCognome(cognome);
@@ -52,8 +56,9 @@ public class MainController {
     n.setSesso(sesso);
     n.setNomeUtente(nomeUtente);
     n.setPasswordUtente(passwordUtente);
-    utenteRepository.save(n);
-    return "Saved";
+    */
+    utenteRepository.save(utente);
+    return new ResponseEntity<Object>(utente,HttpStatus.OK);
   }
   
   //AGGIUNTA NUOVA OFFERTA
@@ -167,8 +172,11 @@ public class MainController {
   prenotazioneRepository.save(p);
   return "Saved";
   }
-  
-  
+  @GetMapping(path="/getStoricoPrenotazione")
+  public @ResponseBody Iterable<StoricoPrenotazione> getAllStoricoPrenotazioni() {
+    // This returns a JSON or XML with the users
+    return storicoPrenotazioneRepository.findAll();
+  }
   @GetMapping(path="/getUtenti")
   public @ResponseBody Iterable<Utente> getAllUtenti() {
     // This returns a JSON or XML with the users
@@ -199,13 +207,6 @@ public class MainController {
     // This returns a JSON or XML with the users
     return prenotazioneRepository.findAll();
   }
-  @GetMapping(path="/getStoricoPrenotazione")
-  public @ResponseBody Iterable<StoricoPrenotazione> getAllStoricoPrenotazioni() {
-    // This returns a JSON or XML with the users
-    return storicoPrenotazioneRepository.findAll();
-  }
-  
-  
   
   
 }

@@ -2,40 +2,37 @@ import { NumberSymbol } from "@angular/common";
 
 export class Utente {
 
-idUtente : number;  
+
 email : string;
   nome : string;
   cognome : string;
   dataNascita : Date;
   indirizzo : string;
   telefono : string;
-  codCartaIdentita : string;
+  codiceCartaIdentita : string;
   sesso : string;
   nomeUtente : string;
-  password : string;
+  passwordUtente : string;
 
-  constructor (idUtente:number, email : string, nome:string, cognome:string, dataNascita:Date,
-    indirizzo:string, telefono:string, codCartaIdentita:string, sesso:string,
-    nomeUtente:string, password:string) {
+  constructor (email : string, nome:string, cognome:string, dataNascita:Date,
+    indirizzo:string, telefono:string, codiceCartaIdentita:string, sesso:string,
+    nomeUtente:string, passwordUtente:string) {
 
-      this.idUtente = idUtente;
+      
       this.email = email;
       this.nome = nome;
       this.cognome = cognome;
       this.dataNascita = dataNascita;
       this.indirizzo = indirizzo;
       this.telefono = telefono;
-      this.codCartaIdentita = codCartaIdentita;
+      this.codiceCartaIdentita = codiceCartaIdentita;
       this.sesso = sesso;
       this.nomeUtente = nomeUtente;
-      this.password = password;
+      this.passwordUtente = passwordUtente;
 
   }
 
-  public getIdUtente() : number {
-    return this.idUtente;
-  }
-
+ 
   public getEmail() : string {
     return this.email;
   }
@@ -79,10 +76,10 @@ email : string;
   }
 
   public getCodCartaIdentita() : string {
-    return this.codCartaIdentita;
+    return this.codiceCartaIdentita;
   }
-  public setCodCartaIdentita( codCartaIdentita : string) {
-    this.codCartaIdentita = codCartaIdentita;
+  public setCodCartaIdentita( codiceCartaIdentita : string) {
+    this.codiceCartaIdentita = codiceCartaIdentita;
   }
 
   public getSesso() : string {
@@ -100,10 +97,10 @@ email : string;
   }
 
   public getPassword() : string {
-    return this.password;
+    return this.passwordUtente;
   }
-  public setPassword( password : string) {
-    this.password = password;
+  public setPassword( passwordUtente : string) {
+    this.passwordUtente = passwordUtente;
   }
 
 }
