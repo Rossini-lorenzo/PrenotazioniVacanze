@@ -48,7 +48,18 @@ export class CaRegistrationComponent implements OnInit {
         nome: [
           null,
           Validators.compose([Validators.required])
-        ],
+        ]
+        ,
+        sex: [
+          null,
+          Validators.compose([Validators.required])
+        ]
+        ,
+        dataNascita: [
+          null,
+          Validators.compose([Validators.required])
+        ]
+        ,
         cognome: [
           null,
           Validators.compose([Validators.required])
@@ -92,8 +103,8 @@ export class CaRegistrationComponent implements OnInit {
 
   onSubmit () : void {
     const {  email, password, nome, cognome,
-      userName, indirizzo, cartaIdentita, telefono, dataNascita, sex} = this.frmSignup.value;
-      this.utente = new Utente(email,nome,cognome,dataNascita,indirizzo,telefono,cartaIdentita,sex,userName,password);
+      username, indirizzo, cartaIdentita, telefono, dataNascita, sex} = this.frmSignup.value;
+      this.utente = new Utente(email,nome,cognome,dataNascita,indirizzo,telefono,cartaIdentita,sex,username,password);
       this.serviceUtente.creataUtente(this.utente).subscribe(
         (response:any)=>{console.log("ok")}
       )

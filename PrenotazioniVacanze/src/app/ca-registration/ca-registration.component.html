@@ -57,10 +57,10 @@
               <div *ngIf="frmSignup.controls['telefono'].hasError('required')">Telefono richiesto</div>
             </div>
             <label  for="dataNascita"> Inserire la data di nascita : </label><br>
-            <input type="date"  class="form-control" placeholder="Inserire una data " name="dataNascita" id="dataNascita" min="1922-01-01" required><br><br>
+            <input type="date" class="form-control"  formControlName="dataNascita" [ngClass]="frmSignup.controls['dataNascita']" placeholder="Inserire una data " name="dataNascita" id="dataNascita" min="1922-01-01" required><br><br>
             <label>
-                <input type="radio" name="sex" value="male"  > Maschio
-                <input type="radio" name="sex" value="female"  > Femmina
+                <input class="form-control" [ngClass]="frmSignup.controls['sex']" formControlName="sex"  type="radio" name="sex" id="m" value="m"  > Maschio
+                <input  class="form-control" [ngClass]="frmSignup.controls['sex']" formControlName="sex" type="radio" name="sex" id="f" value="f"  > Femmina
 
             </label><br><hr><br>
             <button [disabled]="frmSignup.invalid" type="submit" class="btn btn-primary btn-block font-weight-bold"> Registrati </button>

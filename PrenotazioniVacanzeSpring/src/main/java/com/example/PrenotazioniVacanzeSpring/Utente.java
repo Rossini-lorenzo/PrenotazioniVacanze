@@ -37,7 +37,7 @@ public class Utente implements Serializable{
   private String telefono;
   private String codiceCartaIdentita;
   @Enumerated(EnumType.STRING)
-  private Sesso sesso;
+  private Sesso sex;
   private String nomeUtente;
   private String passwordUtente;
   @OneToMany(mappedBy="Utente")
@@ -48,7 +48,7 @@ public class Utente implements Serializable{
   public Utente() {}
   
 public Utente(Integer id, String nome, String email, String cognome, Date dataNascita, String indirizzo,
-		String telefono, String codiceCartaIdentita, Sesso sesso, String nomeUtente, String passwordUtente,
+		String telefono, String codiceCartaIdentita, Sesso sex, String nomeUtente, String passwordUtente,
 		Set<Prenotazione> prenotazioni, Set<StoricoPrenotazione> storicoPrenotazioni) {
 	super();
 	this.id = id;
@@ -59,7 +59,7 @@ public Utente(Integer id, String nome, String email, String cognome, Date dataNa
 	this.indirizzo = indirizzo;
 	this.telefono = telefono;
 	this.codiceCartaIdentita = codiceCartaIdentita;
-	this.sesso = sesso;
+	this.sex = sex;
 	this.nomeUtente = nomeUtente;
 	this.passwordUtente = passwordUtente;
 	this.prenotazioni = prenotazioni;
@@ -115,10 +115,10 @@ public void setCodiceCartaIdentita(String codiceCartaIdentita) {
 	this.codiceCartaIdentita = codiceCartaIdentita;
 }
 public Sesso getSesso() {
-	return sesso;
+	return sex;
 }
 public void setSesso(Sesso sesso) {
-	this.sesso = sesso;
+	this.sex = sesso;
 }
 public String getNomeUtente() {
 	return nomeUtente;

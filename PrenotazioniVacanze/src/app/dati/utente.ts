@@ -10,12 +10,12 @@ email : string;
   indirizzo : string;
   telefono : string;
   codiceCartaIdentita : string;
-  sesso : string;
+  sex : string;
   nomeUtente : string;
   passwordUtente : string;
 
   constructor (email : string, nome:string, cognome:string, dataNascita:Date,
-    indirizzo:string, telefono:string, codiceCartaIdentita:string, sesso:string,
+    indirizzo:string, telefono:string, codiceCartaIdentita:string, sex:string,
     nomeUtente:string, passwordUtente:string) {
 
       
@@ -26,7 +26,7 @@ email : string;
       this.indirizzo = indirizzo;
       this.telefono = telefono;
       this.codiceCartaIdentita = codiceCartaIdentita;
-      this.sesso = sesso;
+      this.sex = sex;
       this.nomeUtente = nomeUtente;
       this.passwordUtente = passwordUtente;
 
@@ -83,10 +83,10 @@ email : string;
   }
 
   public getSesso() : string {
-    return this.sesso;
+    return this.sex;
   }
   public setSesso( sesso : string) {
-    this.sesso = sesso;
+    this.sex = sesso;
   }
 
   public getNomeUtente() : string {
