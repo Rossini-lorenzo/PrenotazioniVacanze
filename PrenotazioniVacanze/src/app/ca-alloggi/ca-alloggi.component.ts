@@ -14,6 +14,7 @@ export class CaAlloggiComponent implements OnInit {
   
   ngOnInit(): void {
   }
+  
   cercaViaggi():void{
     this.viaggi=["roma","milano","napoli","torino"];
   }
