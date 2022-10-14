@@ -115,7 +115,9 @@
             
         <br>
         <!------------------------------------------------------------>
-        <br><button>Salva</button><button>Annulla</button>
+        <br><label *ngIf="modificaNome==true || modificaCognome==true || modificaEmail==true || modificaDataNascita==true || modificaIndirizzo==true || modificaTelefono==true || modificaNomeUtente==true || modificaCodiceCartaIdentita==true || modificaSesso==true || modificaPassword==true">
+            <button>Salva</button>
+            <button (click)="bAnnulla();">Annulla</button></label>
         </p>
     
     </fieldset>
@@ -123,9 +125,9 @@
         
 
     
-        <div class="container signin">
+        <!--div class="container signin">
         <a href="#">Hai dimenticato la password?</a>
-        </div>
+        </div-->
     </div>
         </fieldset></td>
     
