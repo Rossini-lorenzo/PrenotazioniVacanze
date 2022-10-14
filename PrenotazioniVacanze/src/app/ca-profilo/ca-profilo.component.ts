@@ -93,7 +93,16 @@ export class CaProfiloComponent implements OnInit {
       this.modificaIndirizzo=true;
     }
   }
-  ciao(){
-    alert("ciao");
+  bAnnulla() {
+    this.modificaNome=false;
+    this.modificaCognome=false;
+    this.modificaEmail=false;
+    this.modificaDataNascita=false;
+    this.modificaIndirizzo=false;
+    this.modificaTelefono=false;
+    this.modificaCodiceCartaIdentita=false;
+    this.modificaSesso=false;
+    this.modificaNomeUtente=false;
+    this.modificaPassword=false;
   }
 }
