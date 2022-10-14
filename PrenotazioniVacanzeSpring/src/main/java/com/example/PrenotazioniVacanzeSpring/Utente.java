@@ -114,11 +114,11 @@ public String getCodiceCartaIdentita() {
 public void setCodiceCartaIdentita(String codiceCartaIdentita) {
 	this.codiceCartaIdentita = codiceCartaIdentita;
 }
-public Sesso getSesso() {
+public Sesso getSex() {
 	return sex;
 }
-public void setSesso(Sesso sesso) {
-	this.sex = sesso;
+public void setSex(Sesso sex) {
+	this.sex = sex;
 }
 public String getNomeUtente() {
 	return nomeUtente;
