@@ -20,34 +20,19 @@
         <img src="../../assets/user_icona.png" width="75" height="75"><br><br>
         <p>
         <!------------------------------------------------------------>
-        Nome: <label *ngIf="modificaNome==false; else mNome">*nome*&nbsp;<button (click)="toggleNome();">Modifica</button></label>
-        <ng-template #mNome>
+        <p>Nome: *nome*</p>
             
-            <input type="text" placeholder="Nome" name="nome" id="nome" required>
-            &nbsp;<button (click)="toggleNome();">Annulla</button>
-        </ng-template>
-            
-                <br>
+        
         <!------------------------------------------------------------>
-        Cognome: <label *ngIf="modificaCognome==false; else mCognome">*cognome*
-            &nbsp;<button (click)="toggleCognome();">Modifica</button></label>
-        <ng-template #mCognome>
-            
-            <input type="text" placeholder="Cognome" name="cognome" id="cognome" required>
-            &nbsp;<button (click)="toggleCognome();">Annulla</button>
+        <p>Cognome: *cognome*</p>
 
-        </ng-template>
-        <br>
+        
+        
         <!------------------------------------------------------------>
 
-        Nome utente: <label *ngIf="modificaNomeUtente==false; else mNomeUtente">*nome utente*&nbsp;<button (click)="toggleNomeUtente();">Modifica</button></label>
-        <ng-template #mNomeUtente>
+        <p>Nome utente: *nome utente*</p>
             
-            <input type="text" placeholder="Nome utente" name="nome-utente" id="nome-utente" required>
-            &nbsp;<button (click)="toggleNomeUtente();">Annulla</button>
-        </ng-template>
-            
-        <br>
+        
         <!------------------------------------------------------------>
         Email: <label *ngIf="modificaEmail==false; else mEmail">*email*&nbsp;<button (click)="toggleEmail();">Modifica</button></label>
         <ng-template #mEmail>
@@ -58,23 +43,13 @@
             
         <br>
         <!------------------------------------------------------------>
-        Data di nascita: <label *ngIf="modificaDataNascita==false; else mDataNascita">*data di nascita*&nbsp;<button (click)="toggleDataNascita();">Modifica</button></label>
-        <ng-template #mDataNascita>
+        <p>Data di nascita: *data di nascita*</p>
             
-            <input type="date" placeholder="Inserire una data " name="data" id="data" min="1922-01-01"required>
-            &nbsp;<button (click)="toggleDataNascita();">Annulla</button>
-        </ng-template>
-            
-        <br>
+        
         <!------------------------------------------------------------>
-        Indirizzo: <label *ngIf="modificaIndirizzo==false; else mIndirizzo">*indirizzo*&nbsp;<button (click)="toggleIndirizzo();">Modifica</button></label>
-        <ng-template #mIndirizzo>
+        <p>Indirizzo: *indirizzo*</p>
             
-            <input type="text" placeholder="Indirizzo" name="indirizzo" id="indirizzo" required>
-            &nbsp;<button (click)="toggleIndirizzo();">Annulla</button>
-        </ng-template>
-            
-        <br>
+        
         <!------------------------------------------------------------>
         Telefono: <label *ngIf="modificaTelefono==false; else mTelefono">*telefono*&nbsp;<button (click)="toggleTelefono();">Modifica</button></label>
         <ng-template #mTelefono>
@@ -85,26 +60,13 @@
             
         <br>
         <!------------------------------------------------------------>
-        Codice carta d'identità: <label *ngIf="modificaCodiceCartaIdentita==false; else mCodiceCartaIdentita">*codice*&nbsp;<button (click)="toggleCodiceCartaIdentita();">Modifica</button></label>
-        <ng-template #mCodiceCartaIdentita>
+        <p>Codice carta d'identità: *codice*</p>
             
-            <input type="text" placeholder="Numero carta identità" name="codiceCartaIdentita" id="codiceCartaIdentita"  required>
-            &nbsp;<button (click)="toggleCodiceCartaIdentita();">Annulla</button>
-        </ng-template>
-            
-        <br>
+        
         <!------------------------------------------------------------>
-        Sesso: <label *ngIf="modificaSesso==false; else mSesso">*cognome*&nbsp;<button (click)="toggleSesso();">Modifica</button></label>
-        <ng-template #mSesso>
+        <p>Sesso: *sesso*</p>
             
-            <label>
-                <input type="radio" name="sex" value="male"  > Maschio
-                <input type="radio" name="sex" value="female"  > Femmina
-            </label>
-            &nbsp;<button (click)="toggleSesso();">Annulla</button>
-        </ng-template>
-            
-        <br>
+        
         <!------------------------------------------------------------>
         Password<label *ngIf="modificaPassword==false; else mPassword">&nbsp;<button (click)="togglePassword();">Modifica</button></label>
         <ng-template #mPassword>
@@ -115,18 +77,21 @@
             
         <br>
         <!------------------------------------------------------------>
-        <br><label *ngIf="modificaNome==true || modificaCognome==true || modificaEmail==true || modificaDataNascita==true || modificaIndirizzo==true || modificaTelefono==true || modificaNomeUtente==true || modificaCodiceCartaIdentita==true || modificaSesso==true || modificaPassword==true">
-            <button>Salva</button>
+        <br><label *ngIf="modificaEmail==true || modificaTelefono==true || modificaPassword==true">
+            <button>Salva</button>&nbsp;
             <button (click)="bAnnulla();">Annulla</button></label>
-        </p>
+        
     
     </fieldset>
     <br>
-        
+    <fieldset class="interno">
+        <p>guarda le tue <a href="prenotazioni">prenotazioni</a></p>
+        <!--a href="#"></a-->
+    </fieldset>    
 
     
         <!--div class="container signin">
-        <a href="#">Hai dimenticato la password?</a>
+        <a href="#">Prenotazioni associate</a>
         </div-->
     </div>
         </fieldset></td>
