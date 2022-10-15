@@ -24,21 +24,21 @@
 
 
                         <br>
-
+                        <form [formGroup]= "mioForm" (ngSubmit)="login()">
                         <label for="email"></label>
-                        <input type="email" placeholder="Email" name="email" id="email" required>
+                        <input type="email" placeholder="Email" name="email" id="email" formControlName="email" required>
 
                         <br>
                         <label for="psw"></label>
-                        <input type="password" placeholder="Password" name="psw" id="psw" required>
+                        <input type="password" placeholder="Password" name="psw" id="psw"  formControlName="password" required>
                         <br>
 
 
                         <br>
                         <hr>
                         <br>
-                        <button type="submit" name="registrazione" value="registrazione" onclick="validateForm()"> Entra </button>
-
+                        <button type="submit" name="accedi" value="accedi" > Entra </button>
+                        </form>
                         </fieldset>
                         <br>
 

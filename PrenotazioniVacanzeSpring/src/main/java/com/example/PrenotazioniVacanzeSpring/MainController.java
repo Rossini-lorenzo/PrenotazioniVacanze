@@ -2,6 +2,7 @@ package com.example.PrenotazioniVacanzeSpring;
 
 
 import java.sql.Date;
+import java.util.Optional;
 
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -44,22 +45,32 @@ public class MainController {
     // @ResponseBody means the returned String is the n, not a view name
     // @RequestParam means it is a parameter from the GET or POST request
     
-    
-    /*
-    n.setNome(nome);
-    n.setEmail(email);
-    n.setCognome(cognome);
-    n.setDataNascita(dataNascita);
-    n.setIndirizzo(indirizzo);
-    n.setTelefono(telefono);
-    n.setCodiceCartaIdentita(codiceCartaIdentita);
-    n.setSesso(sesso);
-    n.setNomeUtente(nomeUtente);
-    n.setPasswordUtente(passwordUtente);
-    */
+	Optional<Utente> ut = utenteRepository.findByEmail(utente.getEmail());
+	if(ut.isPresent()) {
+		return new ResponseEntity<Object>("Email già registrata",HttpStatus.BAD_REQUEST);
+	}
     utenteRepository.save(utente);
     return new ResponseEntity<Object>(utente,HttpStatus.OK);
   }
+  
+//LOGIN  
+ @CrossOrigin(origins="*")
+ @PostMapping(path="/login") // Map ONLY POST Requests
+ public ResponseEntity<Object> login (@RequestBody String email) {
+	 Optional<Utente>ut = utenteRepository.findByEmail(email);
+	 if(ut.isPresent()) {
+		 if (ut.get().getPasswordUtente().equals(password)) {
+			 return new ResponseEntity<Object>(ut,HttpStatus.OK);
+		 }
+	 }
+	 return new ResponseEntity<Object>("Email o Password sbagliate",HttpStatus.BAD_REQUEST);
+	 
+ }
+  
+  
+  
+  
+  
   
   //AGGIUNTA NUOVA OFFERTA
   @PostMapping(path="/addOfferta") // Map ONLY POST Requests

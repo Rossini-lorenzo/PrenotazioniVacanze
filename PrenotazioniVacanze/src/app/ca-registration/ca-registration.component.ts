@@ -106,7 +106,9 @@ export class CaRegistrationComponent implements OnInit {
       username, indirizzo, cartaIdentita, telefono, dataNascita, sex} = this.frmSignup.value;
       this.utente = new Utente(email,nome,cognome,dataNascita,indirizzo,telefono,cartaIdentita,sex,username,password);
       this.serviceUtente.creataUtente(this.utente).subscribe(
-        (response:any)=>{console.log("ok")}
+        (response:any)=>{this.router.navigate(['/login'])},
+        (error: any) => { alert(error);
+        }
       )
        
     
@@ -114,28 +116,7 @@ export class CaRegistrationComponent implements OnInit {
     
     
     
-        /*this.authService.register(
-      email,
-      password,
-      nome,
-      cognome,
-      userName,
-      indirizzo,
-      cartaIdentita,
-      telefono,
-      dataNascita,
-      sex
-      ).subscribe({
-      next: data => {
-        console.log(data);
-        this.isSuccessful = true;
-        this.isSignUpFailed = false;
-      },
-      error: err => {
-        this.errorMessage = err.error.message;
-        this.isSignUpFailed = true;
-      }
-    });*/
+        
   }
 }
 
