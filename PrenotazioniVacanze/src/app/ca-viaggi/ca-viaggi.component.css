@@ -18,10 +18,9 @@ fieldset {
   box-shadow: 0 0 30px #666;
 }
 
-.card .c1{
+.card {
   
   width: 900px;
-  height: 400px;
   border-radius: 6px;
   padding: 10px,10px,10px,10px;
  
