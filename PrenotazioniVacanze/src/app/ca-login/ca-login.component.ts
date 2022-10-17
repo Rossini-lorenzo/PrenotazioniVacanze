@@ -29,7 +29,10 @@ export class CaLoginComponent implements OnInit {
   this.password=this.mioForm.get("password").value
   this.user = new UtenteLogin(this.email,this.password);
   this.serviceUtente.login(this.user).subscribe(
-    (response:any)=>{this.router.navigate(['/alloggi'])},
+    (response:any)=>{
+      this.serviceUtente.setLogged();
+      this.router.navigate(['/alloggi'])
+    },
     (error: any) => { alert("email o password non corretti");
     }
   )

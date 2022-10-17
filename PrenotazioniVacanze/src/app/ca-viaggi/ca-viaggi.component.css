@@ -70,17 +70,26 @@ line-height: 30px;
 border-bottom: 2px solid rgb(128, 128, 128);}
 
 
-button.btn{
-  
-  position:absolute; 
-  margin-left:-50px;
-  left:50%;
-  width:100px;
-  bottom:70px;
-  height: 40px;
-  background-color: #fa8072;
 
+
+button{
   
+  background-color: white;
+color: rgb(46, 134, 216);
+font-family:"Helvetica",  Sans-serif;
+border: 2px solid rgb(46, 134, 216); /* Green */
+transition-duration: 0.4s;
+font-size:35px;
+border-radius: 6px;
+width: 900px;
+
+}
+button:hover{
+  background-color: rgb(46, 134, 216); /* Green */
+  font-family:"Helvetica",  Sans-serif;
+  color: white;
+  font-size:25;
+  border-radius: 6px;
 
 }
 
@@ -93,7 +102,6 @@ button.btn{
 
 
 
-\\input-nuovi
 
    .text-input{ 
     position: relative;
@@ -146,7 +154,7 @@ button.btn{
 
 
 
-    \\ data 
+  
     label.data{float: left;
     margin-top: 12%;}
     label.data2{float: left;

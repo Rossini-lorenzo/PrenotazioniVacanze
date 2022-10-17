@@ -3,13 +3,18 @@
 <fieldset>
   <a class="img1" href=""><img src="../assets/logo.png" width="250" height="200" ></a>
  
-  <div class="areapersonale">
-    <i class="bi bi-universal-access-circle"></i><a    href="area_personale" class="link-secondary">Profilo   </a>
+   <div class="areapersonale">
+   <i *ngIf="log==true">
+     <i class="bi bi-universal-access-circle"></i><a    href="area_personale" class="link-secondary">Profilo   </a></i>
+   <i *ngIf="log==false">
+    <i class="bi bi-universal-access-circle"></i><a href="login" class="link-secondary">Accedi   </a></i>
+
   </div>
   
   <div class="logreg">
-  <i class="bi bi-universal-access-circle"></i><a href="login" class="link-secondary">Accedi   </a>
-  <a href="registration" class="link-secondary">Registrati</a>
+    <i *ngIf="log==false"><a href="registration" class="link-secondary">Registrati</a></i>
+    <i *ngIf="log==true"><a href="alloggi" (click)="LogOut()" class="link-secondary">LogOut</a></i>
+
 </div>
  
   <div class="card">

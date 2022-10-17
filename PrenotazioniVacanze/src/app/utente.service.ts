@@ -23,4 +23,12 @@ export class UtenteService {
    login(utenteLogin:UtenteLogin){
        return this.http.post<any>(baseUrl+'/login',utenteLogin,this.httpOptions);
    }
+   setLogged(){sessionStorage.setItem("login","true");}
+   setLogOut(){sessionStorage.setItem("login","false");}
+   getLogged():boolean{
+     if(sessionStorage.getItem("login")=="true"){
+      return true;
+     }
+     return false;
+   } 
 }
