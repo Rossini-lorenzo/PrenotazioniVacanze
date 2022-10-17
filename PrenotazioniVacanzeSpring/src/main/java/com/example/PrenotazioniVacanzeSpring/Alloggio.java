@@ -6,30 +6,28 @@ public class Alloggio {
 
 	  private String destinazione;
       private String descrizione;
-	  private int codAlloggio ;
-	  private int camere;
+	  private String pensione ;
 	  private int nBagni ;
 	  private int nStanzaLetto ;
-	  private int nLetti ;
+	  private int nPartecipanti;
 	  private Date dataInizio;
 	  private Date dataFine;
       private String linkImg;
       private String titolo;
 	  public Alloggio() {}
-	public Alloggio(String destinazione, String descrizione, int codAlloggio, int camere, int nBagni, int nStanzaLetto,
-			int nLetti, int maxPartecipanti, Date dataInizio, Date dataFine,String linkImg,String titolo) {
+	public Alloggio(String destinazione, String descrizione, String pensione, int nBagni, int nStanzaLetto,
+			int nLetti, Date dataInizio, Date dataFine,String linkImg,String titolo,int nPartecipanti) {
 		super();
 		this.destinazione = destinazione;
 		this.descrizione = descrizione;
-		this.codAlloggio = codAlloggio;
-		this.camere = camere;
+		this.pensione = pensione;
 		this.nBagni = nBagni;
 		this.nStanzaLetto = nStanzaLetto;
-		this.nLetti = nLetti;
 		this.dataInizio = dataInizio;
 		this.dataFine = dataFine;
 		this.linkImg=linkImg;
 		this.titolo=titolo;
+		this.nPartecipanti=nPartecipanti;
 	}
 	public String getDestinazione() {
 		return destinazione;
@@ -43,18 +41,13 @@ public class Alloggio {
 	public void setDescrizione(String descrizione) {
 		this.descrizione = descrizione;
 	}
-	public int getCodAlloggio() {
-		return codAlloggio;
+	public String getCodAlloggio() {
+		return pensione;
 	}
-	public void setCodAlloggio(int codAlloggio) {
-		this.codAlloggio = codAlloggio;
+	public void setCodAlloggio(String pensione) {
+		this.pensione = pensione;
 	}
-	public int getCamere() {
-		return camere;
-	}
-	public void setCamere(int camere) {
-		this.camere = camere;
-	}
+	
 	public int getnBagni() {
 		return nBagni;
 	}
@@ -66,12 +59,6 @@ public class Alloggio {
 	}
 	public void setnStanzaLetto(int nStanzaLetto) {
 		this.nStanzaLetto = nStanzaLetto;
-	}
-	public int getnLetti() {
-		return nLetti;
-	}
-	public void setnLetti(int nLetti) {
-		this.nLetti = nLetti;
 	}
 	
 	public Date getDataInizio() {
@@ -97,6 +84,18 @@ public class Alloggio {
 	}
 	public void setTitolo(String titolo) {
 		this.titolo = titolo;
+	}
+	public String getPensione() {
+		return pensione;
+	}
+	public void setPensione(String pensione) {
+		this.pensione = pensione;
+	}
+	public int getnPartecipanti() {
+		return nPartecipanti;
+	}
+	public void setnPartecipanti(int nPartecipanti) {
+		this.nPartecipanti = nPartecipanti;
 	}
 	
 	  

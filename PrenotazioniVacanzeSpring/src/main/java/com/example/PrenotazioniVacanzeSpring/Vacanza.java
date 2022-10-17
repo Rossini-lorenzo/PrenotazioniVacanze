@@ -1,5 +1,6 @@
 package com.example.PrenotazioniVacanzeSpring;
 
+import java.io.Serializable;
 import java.sql.Date;
 import java.util.Set;
 import javax.persistence.JoinColumn;
@@ -16,10 +17,9 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 @Table(name="Vacanza")
 @Entity
-public class Vacanza {
+public class Vacanza implements Serializable {
     
     public enum tipoMezzo {pullman,treno,aereo};
-    public enum pensione{Completa,Mezza,No}
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name="idVacanza")
@@ -30,9 +30,8 @@ public class Vacanza {
     private int codPacchetto;
     private String destinazione;
     private String descrizione;
-    @Enumerated(EnumType.STRING)
-    private pensione pensione;
-    private int nMaxPartecipanti;
+    private String pensione;
+    private int nPartecipanti;
     private int nStanzeLetto;
     private int nBagni;
     private int nLetti;
@@ -58,7 +57,48 @@ public class Vacanza {
 	@OneToMany(mappedBy="Vacanza")
     private Set<Recensione> recensioni;
 	
-    public int getCodViaggioPacchetto() {
+	public Vacanza() {};
+	
+    public Vacanza(Integer idVacanza, String titolo, int codAlloggio, int codViaggio, int codPacchetto,
+			String destinazione, String descrizione, String pensione, int nPartecipanti, int nStanzeLetto, int nBagni,
+			int nLetti, Double orarioPartenza, Double orarioArrivo, int nBiglietti, String luogoArrivo,
+			String luogoPartenza, com.example.PrenotazioniVacanzeSpring.Vacanza.tipoMezzo tipoMezzo, Date dataInizio,
+			Date dataFine, int codViaggioPacchetto, int codViaggioRitornoPacchetto, int codAlloggioPacchetto,
+			String linkImg, Set<Offerta> offerte, Set<Recensione> recensioni) {
+		super();
+		this.idVacanza = idVacanza;
+		this.titolo = titolo;
+		this.codAlloggio = codAlloggio;
+		this.codViaggio = codViaggio;
+		this.codPacchetto = codPacchetto;
+		this.destinazione = destinazione;
+		this.descrizione = descrizione;
+		this.pensione = pensione;
+		this.nPartecipanti = nPartecipanti;
+		this.nStanzeLetto = nStanzeLetto;
+		this.nBagni = nBagni;
+		this.nLetti = nLetti;
+		this.orarioPartenza = orarioPartenza;
+		this.orarioArrivo = orarioArrivo;
+		this.nBiglietti = nBiglietti;
+		this.luogoArrivo = luogoArrivo;
+		this.luogoPartenza = luogoPartenza;
+		this.tipoMezzo = tipoMezzo;
+		this.dataInizio = dataInizio;
+		this.dataFine = dataFine;
+		this.codViaggioPacchetto = codViaggioPacchetto;
+		this.codViaggioRitornoPacchetto = codViaggioRitornoPacchetto;
+		this.codAlloggioPacchetto = codAlloggioPacchetto;
+		this.linkImg = linkImg;
+		this.offerte = offerte;
+		this.recensioni = recensioni;
+	}
+
+	public void setOfferte(Set<Offerta> offerte) {
+		this.offerte = offerte;
+	}
+
+	public int getCodViaggioPacchetto() {
 		return codViaggioPacchetto;
 	}
 	public void setCodViaggioPacchetto(int codViaggioPacchetto) {
@@ -132,11 +172,11 @@ public class Vacanza {
     public void setDescrizione(String descrizione) {
         this.descrizione = descrizione;
     }
-    public int getnMaxPartecipanti() {
-        return nMaxPartecipanti;
+    public int getnPartecipanti() {
+        return nPartecipanti;
     }
-    public void setnMaxPartecipanti(int nMaxPartecipanti) {
-        this.nMaxPartecipanti = nMaxPartecipanti;
+    public void setnPartecipanti(int nPartecipanti) {
+        this.nPartecipanti = nPartecipanti;
     }
     public int getnStanzeLetto() {
         return nStanzeLetto;
@@ -198,10 +238,10 @@ public class Vacanza {
     public void setDataFine(Date dataFine) {
         this.dataFine = dataFine;
     }
-    public pensione getPensione() {
+    public String getPensione() {
 		return pensione;
 	}
-	public void setPensione(pensione pensione) {
+	public void setPensione(String pensione) {
 		this.pensione = pensione;
 	}
 	public String getLuogoArrivo() {

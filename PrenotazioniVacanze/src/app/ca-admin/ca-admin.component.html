@@ -11,39 +11,27 @@
   
    
 <form [formGroup]= "mioForm2" (ngSubmit)="aggiungiAlloggio()">
-    <div class="card-body">
-      <!--------------------------------------------------------------------->
-      <div class="row text-center ">
-        <div class="col">
+    
          
         <div> <label>Destinazione : </label> <input type="text" placeholder="Destinazione" name="Destinazione" id="destinazione" formControlName="destinazione"></div> 
         <div><label>N Partecipanti : </label>  <input type="number" placeholder="Numero di partecipanti" name="nPartecipanti" id="nPartecipanti" formControlName="nPartecipanti"></div>
-        <div><label>Pensione : </label> <select class="selectpicker"  data-style="btn-primary">
-            <option value="0">Seleziona Pensione</option>
-            <option value="1">Completa</option>
-            <option value="2">Mezza</option>
-            <option value="3">No</option>
+        <div><label>Pensione : </label> <select class="selectpicker"  data-style="btn-primary" formControlName="pensione">
+            <option value="no">Seleziona Pensione</option>
+            <option value="Completa">Completa</option>
+            <option value="Mezza">Mezza</option>
+            <option value="No">No</option>
           </select></div>
-      <div><label>Titolo : </label> <input type="text" placeholder="Titolo" name="Titolo" id="Titolo"></div>
+      <div><label>Titolo : </label> <input type="text" placeholder="titolo" name="titolo" id="titolo" formControlName="titolo"></div>
       <label class="data2"> DA :</label>
-      <div class="datac2"> <input class=d2 type="date"  id="dateStandard" name="dateStandard" ></div>
+      <div class="datac2"> <input class=d2 type="date"  id="dateStandard" name="dateStandard" formControlName="dataInizio"></div>
 
-        </div>
-        <div class="col">
-          <div><label>N Bagni : </label> <input type="number" placeholder="Numero di bagni " name="nBagni" id="nBagni"></div>
-          <div><label>N Letti : </label>  <input type="number" placeholder="Numero di letti" name="nLetti" id="nLetti"></div>
-          <div><label>Descrizione : </label> <input type="text" placeholder="Descrizione" name="Descrizione" id="Descrizione"></div>
-          <div> <label>linkImg : </label> <input type="text" placeholder="linkImg" name="linkImg" id="linkImg"></div>
+          <div><label>N Bagni : </label> <input type="number" placeholder="Numero di bagni " name="nBagni" id="nBagni" formControlName="nBagni"></div>
+          <div><label>N Stanze Letto : </label>  <input type="number" placeholder="Numero stanze letto " name="nLetti" id="nLetti" formControlName="nStanzaLetto"></div>
+          <div><label>Descrizione : </label> <input type="text" placeholder="Descrizione" name="descrizione" id="descrizione" formControlName="descrizione"></div>
+          <div> <label>linkImg : </label> <input type="text" placeholder="linkImg" name="linkImg" id="linkImg" formControlName="linkImg"></div>
           <label class="data2"> A :</label>
-          <div class="datac2"> <input class=d2 type="date"  id="dateStandard" name="dateStandard" ></div>
+          <div class="datac2"> <input class=d2 type="date"  id="dateStandard" name="dateStandard" formControlName="dataFine"></div>
 
-        </div>
-     
-      </div>
-      
-
-      <!--------------------------------------------------------------------->
-</div>
 <button type="submit" name="aggiungiAlloggio" value="aggiungiAlloggio" > aggiungi Alloggio </button>
 </form>
 
