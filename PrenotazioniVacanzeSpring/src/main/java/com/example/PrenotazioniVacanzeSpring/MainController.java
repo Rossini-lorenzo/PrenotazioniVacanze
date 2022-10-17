@@ -56,10 +56,10 @@ public class MainController {
 //LOGIN  
  @CrossOrigin(origins="*")
  @PostMapping(path="/login") // Map ONLY POST Requests
- public ResponseEntity<Object> login (@RequestBody String email) {
-	 Optional<Utente>ut = utenteRepository.findByEmail(email);
+ public ResponseEntity<Object> login (@RequestBody UtenteLogin utenteLogin) {
+	 Optional<Utente>ut = utenteRepository.findByEmail(utenteLogin.getEmail());
 	 if(ut.isPresent()) {
-		 if (ut.get().getPasswordUtente().equals(password)) {
+		 if(ut.get().getPasswordUtente().equals(utenteLogin.getPasswordUtente())){
 			 return new ResponseEntity<Object>(ut,HttpStatus.OK);
 		 }
 	 }

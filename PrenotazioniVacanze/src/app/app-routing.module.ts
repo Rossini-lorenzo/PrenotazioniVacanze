@@ -8,6 +8,7 @@ import { CaViaggiComponent } from './ca-viaggi/ca-viaggi.component';
 import { CaAlloggiComponent } from './ca-alloggi/ca-alloggi.component';
 import { CaProfiloComponent } from './ca-profilo/ca-profilo.component';
 import { CaPrenotazioniComponent } from './ca-prenotazioni/ca-prenotazioni.component';
+import { CaAdminComponent } from './ca-admin/ca-admin.component';
 
 const routes: Routes = [
   { path: '', component: CaAlloggiComponent },
@@ -17,7 +18,8 @@ const routes: Routes = [
   { path: 'viaggi', component:CaViaggiComponent  },
   { path: 'alloggi', component:CaAlloggiComponent  },
   { path: 'area_personale', component:CaProfiloComponent  },
-  { path: 'prenotazioni', component:CaPrenotazioniComponent  }
+  { path: 'prenotazioni', component:CaPrenotazioniComponent  },
+  {path:'admin',component:CaAdminComponent}
   ];
 
 @NgModule({

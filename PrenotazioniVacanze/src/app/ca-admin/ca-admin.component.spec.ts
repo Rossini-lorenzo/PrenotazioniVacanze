@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CaPrenotazioniComponent } from './ca-prenotazioni.component';
+import { CaAdminComponent } from './ca-admin.component';
 
-describe('CaPrenotazioniComponent', () => {
-  let component: CaPrenotazioniComponent;
-  let fixture: ComponentFixture<CaPrenotazioniComponent>;
+describe('CaAdminComponent', () => {
+  let component: CaAdminComponent;
+  let fixture: ComponentFixture<CaAdminComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CaPrenotazioniComponent ]
+      declarations: [ CaAdminComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(CaPrenotazioniComponent);
+    fixture = TestBed.createComponent(CaAdminComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -24,43 +24,21 @@ fieldset {
   padding: 10px,10px,10px,10px;
  
 }
-div.dataDa{
-  padding: 10px,10px,10px,10px;
-}
+
 .img1{
   padding-left: 31%;
   
 }
 
 
-.topnav a {
-  float:none;
-  display:inline-block;
-  color: #0b0808;
-  text-align: center;
-  padding: 14px 109px;
-  text-decoration: none;
-  font-size: 20px;
-  border-bottom: 3px solid transparent;
-}
 
-.topnav a:hover {
-  border-bottom: 3px solid red;
-}
-
-.topnav a.active {
-  border-bottom: 3px solid red;
-}
 
 
 div.logreg{
   float:right;
   
 }
-div.areapersonale{
-  float:left;
 
-}
 
 input{
   font-family:"Helvetica",  Sans-serif;
