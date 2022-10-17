@@ -1,5 +1,9 @@
 export class Alloggio {
-
+  
+  destinazione :string;
+  descrizione : string;
+  dataInizio : Date;
+  dataFine : Date;
   codAlloggio : number;
   camere : number;
   nBagni : number;
@@ -8,13 +12,18 @@ export class Alloggio {
   maxPartecipanti : number;
 
   constructor ( codAlloggio : number, camere : number, nBagni : number, nStanzaLetto : number,
-    nLetti : number, maxPartecipanti : number ) {
+    nLetti : number, maxPartecipanti : number ,destinazione:string,descrizione:string,dataInizio:Date,
+    dataFine:Date) {
       this.codAlloggio = codAlloggio;
       this.camere = camere;
       this.nBagni = nBagni;
       this.nLetti = nLetti;
       this.nStanzaLetto = nStanzaLetto;
       this.maxPartecipanti = maxPartecipanti;
+      this.destinazione=destinazione;
+      this.descrizione=descrizione;
+      this.dataFine=dataFine;
+      this.dataInizio=dataInizio;
 
   }
 
@@ -54,7 +63,33 @@ public getMaxPartecipanti() : number {
   return this.maxPartecipanti;
 }
 public setMaxPartecipanti( numero : number) {
-  this.maxPartecipanti = this.maxPartecipanti;
+  this.maxPartecipanti = numero;
 }
+public getDescrizione() : String {
+  return this.descrizione;
+}
+public setDescrizione( descrizione : string) {
+  this.descrizione = descrizione;
+}
+public getDestinazione() : String {
+  return this.destinazione;
+}
+public setDestinazione( destinazione : string) {
+  this.destinazione = destinazione;
+}
+public getDataInizio() : Date {
+  return this.dataInizio;
+}
+public setDataInizio( dataInizio : Date) {
+  this.dataInizio = dataInizio;
+}
+
+public getDataFine() : Date {
+  return this.dataFine;
+}
+public setDataFine( dataFine : Date) {
+  this.dataFine = dataFine;
+}
+
 
 }

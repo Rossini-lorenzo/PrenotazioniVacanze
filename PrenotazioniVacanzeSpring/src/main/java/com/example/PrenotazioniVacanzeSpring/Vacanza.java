@@ -24,7 +24,7 @@ public class Vacanza {
     @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name="idVacanza")
     private Integer idVacanza;
-    
+    private String titolo;
 	private int codAlloggio;
     private int codViaggio;
     private int codPacchetto;
@@ -48,6 +48,7 @@ public class Vacanza {
     private int codViaggioPacchetto;
     private int codViaggioRitornoPacchetto;
     private int codAlloggioPacchetto;
+    private String linkImg;
 	@ManyToMany
     @JoinTable(name="VACANZE_OFFERTE",
     		joinColumns={@JoinColumn(name="idVacanza")},
@@ -209,5 +210,18 @@ public class Vacanza {
 	public void setLuogoArrivo(String luogoArrivo) {
 		this.luogoArrivo = luogoArrivo;
 	}
+	public String getLinkImg() {
+		return linkImg;
+	}
+	public void setLinkImg(String linkImg) {
+		this.linkImg = linkImg;
+	}
+	public String getTitolo() {
+		return titolo;
+	}
+	public void setTitolo(String titolo) {
+		this.titolo = titolo;
+	}
+	
     
 }

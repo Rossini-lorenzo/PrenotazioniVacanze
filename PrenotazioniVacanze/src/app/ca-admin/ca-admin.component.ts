@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FormGroup,FormControl,FormBuilder} from '@angular/forms';
 
 @Component({
   selector: 'app-ca-admin',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ca-admin.component.css']
 })
 export class CaAdminComponent implements OnInit {
+  mioForm2:FormGroup;
 
-  constructor() { }
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
+    this.mioForm2 = this.fb.group({
+      
+      })
   }
   aggiungiViaggio(){}
   aggiungiPacchetto(){}
