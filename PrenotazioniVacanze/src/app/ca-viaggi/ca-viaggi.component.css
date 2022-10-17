@@ -72,7 +72,7 @@ border-bottom: 2px solid rgb(128, 128, 128);}
 
 button.btn{
   
-  position:absolute;
+  position:relative;
   margin-left:-50px;
   left:50%;
   width:100px;
