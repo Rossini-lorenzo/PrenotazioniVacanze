@@ -2,8 +2,7 @@ export class Alloggio {
   nPartecipanti:number;
   destinazione :string;
   descrizione : string;
-  dataInizio : Date;
-  dataFine : Date;
+ 
   nBagni : number;
   nStanzaLetto : number;
   pensione:string;
@@ -11,16 +10,14 @@ export class Alloggio {
   linkImg:string;
 
   constructor (   nBagni : number, nStanzaLetto : number,
-    nPartecipanti : number,destinazione:string,descrizione:string,dataInizio:Date,
-    dataFine:Date,pensione:string,titolo:string,linkImg:string
+    nPartecipanti : number,destinazione:string,descrizione:string,
+   pensione:string,titolo:string,linkImg:string
   ) {
       this.nBagni = nBagni;
       this.nPartecipanti = nPartecipanti;
       this.nStanzaLetto = nStanzaLetto;
       this.destinazione=destinazione;
       this.descrizione=descrizione;
-      this.dataFine=dataFine;
-      this.dataInizio=dataInizio;
       this.titolo=titolo;
       this.pensione=pensione;
       this.linkImg=linkImg;
@@ -63,19 +60,6 @@ public getDestinazione() : string {
 }
 public setDestinazione( destinazione : string) {
   this.destinazione = destinazione;
-}
-public getDataInizio() : Date {
-  return this.dataInizio;
-}
-public setDataInizio( dataInizio : Date) {
-  this.dataInizio = dataInizio;
-}
-
-public getDataFine() : Date {
-  return this.dataFine;
-}
-public setDataFine( dataFine : Date) {
-  this.dataFine = dataFine;
 }
 
 

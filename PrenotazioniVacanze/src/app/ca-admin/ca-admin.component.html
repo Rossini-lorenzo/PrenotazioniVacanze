@@ -22,18 +22,27 @@
             <option value="No">No</option>
           </select></div>
       <div><label>Titolo : </label> <input type="text" placeholder="titolo" name="titolo" id="titolo" formControlName="titolo"></div>
-      <label class="data2"> DA :</label>
-      <div class="datac2"> <input class=d2 type="date"  id="dateStandard" name="dateStandard" formControlName="dataInizio"></div>
-
           <div><label>N Bagni : </label> <input type="number" placeholder="Numero di bagni " name="nBagni" id="nBagni" formControlName="nBagni"></div>
           <div><label>N Stanze Letto : </label>  <input type="number" placeholder="Numero stanze letto " name="nLetti" id="nLetti" formControlName="nStanzaLetto"></div>
           <div><label>Descrizione : </label> <input type="text" placeholder="Descrizione" name="descrizione" id="descrizione" formControlName="descrizione"></div>
           <div> <label>linkImg : </label> <input type="text" placeholder="linkImg" name="linkImg" id="linkImg" formControlName="linkImg"></div>
-          <label class="data2"> A :</label>
-          <div class="datac2"> <input class=d2 type="date"  id="dateStandard" name="dateStandard" formControlName="dataFine"></div>
-
+        
 <button type="submit" name="aggiungiAlloggio" value="aggiungiAlloggio" > aggiungi Alloggio </button>
 </form>
+
+<form [formGroup]= "mioForm3" (ngSubmit)="aggiungiOfferta()">
+  <label class="data2"> DA :</label>
+  <div class="datac2"> <input class=d2 type="date"  id="dateStandard" name="dateStandard" formControlName="dataInizioOfferta"></div>
+  <label class="data2"> A :</label>
+  <div class="datac2"> <input class=d2 type="date"  id="dateStandard" name="dateStandard" formControlName="dataFineOfferta"></div>
+  <div><label>Prezzo :  </label>  <input type="input" placeholder="Prezzo" name="Prezzo" id="Prezzo" formControlName="Prezzo"></div>
+  <div><label>Codice Alloggio : </label>  <input type="input" placeholder="idVacanza" name="idVacanza" id="idVacanza" formControlName="idVacanza"></div>
+
+         
+  
+<button type="submit" name="aggiungiAlloggio" value="aggiungiAlloggio" > aggiungi Offerta </button>
+</form>
+
 
 
 <div class="card-body">

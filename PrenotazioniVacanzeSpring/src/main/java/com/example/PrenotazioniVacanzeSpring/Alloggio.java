@@ -10,21 +10,19 @@ public class Alloggio {
 	  private int nBagni ;
 	  private int nStanzaLetto ;
 	  private int nPartecipanti;
-	  private Date dataInizio;
-	  private Date dataFine;
+
       private String linkImg;
       private String titolo;
 	  public Alloggio() {}
 	public Alloggio(String destinazione, String descrizione, String pensione, int nBagni, int nStanzaLetto,
-			int nLetti, Date dataInizio, Date dataFine,String linkImg,String titolo,int nPartecipanti) {
+			int nLetti, String linkImg,String titolo,int nPartecipanti) {
 		super();
 		this.destinazione = destinazione;
 		this.descrizione = descrizione;
 		this.pensione = pensione;
 		this.nBagni = nBagni;
 		this.nStanzaLetto = nStanzaLetto;
-		this.dataInizio = dataInizio;
-		this.dataFine = dataFine;
+	
 		this.linkImg=linkImg;
 		this.titolo=titolo;
 		this.nPartecipanti=nPartecipanti;
@@ -61,18 +59,7 @@ public class Alloggio {
 		this.nStanzaLetto = nStanzaLetto;
 	}
 	
-	public Date getDataInizio() {
-		return dataInizio;
-	}
-	public void setDataInizio(Date dataInizio) {
-		this.dataInizio = dataInizio;
-	}
-	public Date getDataFine() {
-		return dataFine;
-	}
-	public void setDataFine(Date dataFine) {
-		this.dataFine = dataFine;
-	}
+	
 	public String getLinkImg() {
 		return linkImg;
 	}

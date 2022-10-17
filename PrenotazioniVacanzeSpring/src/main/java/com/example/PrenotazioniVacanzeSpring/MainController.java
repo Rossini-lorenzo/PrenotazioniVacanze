@@ -39,7 +39,7 @@ public class MainController {
   private PrenotazioneRepository prenotazioneRepository;
   @Autowired
   private OffertaRepository offertaRepository;
-  private static int codAlloggio=0;
+  private static int codAlloggio=1;
   // AGGIUNTA NUOVO UTENTE 
   @CrossOrigin(origins="*")
   @PostMapping(path="/addUser") // Map ONLY POST Requests
@@ -75,7 +75,11 @@ public class MainController {
    // @ResponseBody means the returned String is the n, not a view name
    // @RequestParam means it is a parameter from the GET or POST request
 	
-	
+	 Optional<Vacanza>v = vacanzaRepository.findByTitolo(alloggio.getTitolo());
+	 if(v.isPresent()) {
+			return new ResponseEntity<Object>("Email già registrata",HttpStatus.BAD_REQUEST);
+		}
+	  
 	  Vacanza a = new Vacanza();
 	  a.setCodAlloggio(codAlloggio++);
 	  a.setDescrizione(alloggio.getDescrizione());
@@ -84,8 +88,6 @@ public class MainController {
 	  a.setnBagni(alloggio.getnBagni());
 	  a.setnPartecipanti(alloggio.getnPartecipanti());
 	  a.setPensione(alloggio.getPensione());
-	  a.setDataInizio(alloggio.getDataInizio());
-	  a.setDataFine(alloggio.getDataFine());
 	  a.setLinkImg(alloggio.getLinkImg());
 	  a.setTitolo(alloggio.getTitolo());
 	  vacanzaRepository.save(a);
@@ -93,12 +95,26 @@ public class MainController {
  }
  
   
+ //AGGIUNTA NUOVA OFFERTA
+@CrossOrigin(origins="*")
+@PostMapping(path="/addOfferta") // Map ONLY POST Requests
+public ResponseEntity<Object> addNewOfferta (@RequestBody Offerta offerta) {
+  // @ResponseBody means the returned String is the n, not a view name
+  // @RequestParam means it is a parameter from the GET or POST request
+	
+	/* Optional<Offerta>o = vacanzaRepository.findByTitolo(alloggio.getTitolo());
+	 if(v.isPresent()) {
+			return new ResponseEntity<Object>("Email già registrata",HttpStatus.BAD_REQUEST);
+		}
+	  */
+	  offertaRepository.save(offerta);
+	   return new ResponseEntity<Object>(offerta,HttpStatus.OK);
+}
   
-  
-  
+  /*
   //AGGIUNTA NUOVA OFFERTA
-  @PostMapping(path="/addOfferta") // Map ONLY POST Requests
-  public @ResponseBody String addNewOffera (@RequestParam Integer prezzo,@RequestParam Vacanza vacanza
+  @PostMapping(path="/addOfferta1") // Map ONLY POST Requests
+  public @ResponseBody String addNewOffera1(@RequestParam Integer prezzo,@RequestParam Vacanza vacanza
 		  ,@RequestParam Date dataInizio,@RequestParam Date dataFine) {
   Offerta o = new Offerta();
   o.setPrezzo(prezzo);
@@ -109,7 +125,7 @@ public class MainController {
   return "Saved";
   }
 
-
+*/
   
   //AGGIUNTA NUOVO PACCHETTO
   @PostMapping(path="/addPacchetto") // Map ONLY POST Requests

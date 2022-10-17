@@ -1,6 +1,8 @@
 package com.example.PrenotazioniVacanzeSpring;
 
 import java.sql.Date;
+import java.util.Collection;
+import java.util.Optional;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -40,6 +42,7 @@ public class Offerta {
     private Integer prezzo;
     private Date DateInizio;
     private Date DataFine;
+    private Integer idVacanza;
     
     @OneToOne
     @JoinColumn(name = "codPrenotazione")
@@ -52,8 +55,8 @@ public class Offerta {
 		return vacanze;
 	}
 
-	public void setVacanze(Vacanza vacanza) {
-		this.vacanze.add(vacanza);
+	public void addVacanza(Vacanza v ) {
+		this.vacanze.add(v);
 	}
 
 	public Integer getCodOfferta() {
@@ -73,6 +76,18 @@ public class Offerta {
 	}
 
 	
+
+	public Integer getIdVacanza() {
+		return idVacanza;
+	}
+
+	public void setIdVacanza(Integer idVacanza) {
+		this.idVacanza = idVacanza;
+	}
+
+	public void setVacanze(Set<Vacanza> vacanze) {
+		this.vacanze = vacanze;
+	}
 
 	public Date getDateInizio() {
 		return DateInizio;
