@@ -9,12 +9,16 @@ import { UtenteService } from '../utente.service';
 export class CaPacchettiComponent implements OnInit {
   log:boolean;
   viaggi:String[];
+  logAdmin:boolean;
   constructor(private utenteService:UtenteService) { 
    this.viaggi=[];
+   this.logAdmin=utenteService.getLoggedAdmin();
    this.log=utenteService.getLogged();
   }
-  LogOut():void{this.utenteService.setLogOut();}
-
+  LogOut():void{
+    this.utenteService.setLogOut();
+    this.utenteService.setLogOutAdmin();
+  }
   ngOnInit(): void {
   }
   cercaViaggi():void{

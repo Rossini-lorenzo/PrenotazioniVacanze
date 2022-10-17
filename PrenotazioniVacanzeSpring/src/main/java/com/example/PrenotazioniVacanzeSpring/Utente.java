@@ -40,6 +40,7 @@ public class Utente implements Serializable{
   private Sesso sex;
   private String nomeUtente;
   private String passwordUtente;
+  private boolean admin;
   @OneToMany(mappedBy="Utente")
   private Set<Prenotazione> prenotazioni;
   @OneToMany(mappedBy="Utente")
@@ -48,7 +49,7 @@ public class Utente implements Serializable{
   public Utente() {}
   
 public Utente(Integer id, String nome, String email, String cognome, Date dataNascita, String indirizzo,
-		String telefono, String codiceCartaIdentita, Sesso sex, String nomeUtente, String passwordUtente,
+		String telefono, String codiceCartaIdentita, Sesso sex, String nomeUtente, String passwordUtente,boolean admin,
 		Set<Prenotazione> prenotazioni, Set<StoricoPrenotazione> storicoPrenotazioni) {
 	super();
 	this.id = id;
@@ -64,6 +65,7 @@ public Utente(Integer id, String nome, String email, String cognome, Date dataNa
 	this.passwordUtente = passwordUtente;
 	this.prenotazioni = prenotazioni;
 	this.storicoPrenotazioni = storicoPrenotazioni;
+	this.admin=false;
 }
 
 public Integer getId() {
@@ -143,6 +145,14 @@ public Set<StoricoPrenotazione> getStoricoPrenotazioni() {
 }
 public void setStoricoPrenotazioni(Set<StoricoPrenotazione> storicoPrenotazioni) {
 	this.storicoPrenotazioni = storicoPrenotazioni;
+}
+
+public boolean isAdmin() {
+	return admin;
+}
+
+public void setAdmin(boolean admin) {
+	this.admin = admin;
 }
 
  

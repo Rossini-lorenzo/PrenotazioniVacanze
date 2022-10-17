@@ -31,4 +31,13 @@ export class UtenteService {
      }
      return false;
    } 
+   setLoggedAdmin(){sessionStorage.setItem("admin","true");}
+   setLogOutAdmin(){sessionStorage.setItem("admin","false");}
+   getLoggedAdmin():boolean{
+    if(sessionStorage.getItem("admin")=="true"){
+     return true;
+    }
+    return false;
+  } 
+
 }

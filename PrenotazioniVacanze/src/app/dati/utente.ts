@@ -13,12 +13,13 @@ email : string;
   sex : string;
   nomeUtente : string;
   passwordUtente : string;
+  admin:boolean;
 
   constructor (email : string, nome:string, cognome:string, dataNascita:Date,
     indirizzo:string, telefono:string, codiceCartaIdentita:string, sex:string,
     nomeUtente:string, passwordUtente:string) {
 
-      
+      this.admin=false;
       this.email = email;
       this.nome = nome;
       this.cognome = cognome;
@@ -101,6 +102,12 @@ email : string;
   }
   public setPassword( passwordUtente : string) {
     this.passwordUtente = passwordUtente;
+  }
+  public isAdmin() : boolean {
+    return this.admin;
+  }
+  public setAdmin( admin : boolean) {
+    this.admin = admin;
   }
 
 }

@@ -3,6 +3,7 @@ import {FormGroup,FormControl,FormBuilder} from '@angular/forms';
 import { UtenteService } from '../utente.service';
 import { Router } from '@angular/router';
 import { UtenteLogin } from '../dati/utente-login';
+import { Utente } from '../dati/utente';
 @Component({
   selector: 'app-ca-login',
   templateUrl: './ca-login.component.html',
@@ -29,7 +30,8 @@ export class CaLoginComponent implements OnInit {
   this.password=this.mioForm.get("password").value
   this.user = new UtenteLogin(this.email,this.password);
   this.serviceUtente.login(this.user).subscribe(
-    (response:any)=>{
+    (response:Utente)=>{
+      if(response.admin==true){this.serviceUtente.setLoggedAdmin()}
       this.serviceUtente.setLogged();
       this.router.navigate(['/alloggi'])
     },
