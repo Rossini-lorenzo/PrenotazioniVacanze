@@ -35,26 +35,39 @@
       <!--------------------------------------------------------------------->
       <div class="row text-center ">
         <div class="col">
-        <label>Destinazione : </label>  <input type="text" placeholder="Destinazione" name="Destinazione" id="destinazione">
-        <div class="form-group">
-          <label class="active" for="dateStandard">Da : </label>
-          <input type="date" id="dateStandard" name="dateStandard">
-      </div>
+
+          <div class="text-input">
+            <input type="text" id="input1" placeholder="Inserire Destinazione">
+            <label for="input1">Destinazione</label>
+          </div>
+
+        <label class="data2"> A :</label>
+           <div class="datac2"> <input class=d2 type="date"  id="dateStandard" name="dateStandard" ></div>
+
         </div>
+
+
       <div class="col">
-        <label>N Partecipanti : </label> <input type="number" placeholder="Numero di partecipanti" name="nPartecipanti" id="nPartecipanti">
-        <div class="form-group">
-          <label class="active" for="dateStandard">A : </label>
-          <input type="date" id="dateStandard" name="dateStandard">
-      </div>
+
+        <div class="text-input">
+            <input type="text" id="input1" placeholder="Inserie numero">
+            <label for="input1">N persone</label>
+        </div>
+
+        <label class="data2"> A :</label>
+           <div class="datac2"> <input class=d2 type="date"  id="dateStandard" name="dateStandard" ></div>
+           
           <!--input type="checkbox" name="sconto" value="1">
           <label for="sconto">&nbsp;Viaggio in sconto</label-->
           
       </div></div>
       <!--------------------------------------------------------------------->
+      <button type="button" class="btn" (click)="cercaViaggi()"> Cerca </button>
     </div>
+    <br>
+    <br>
+    <hr>
   </div>
-<button type="submit" name="registrazione" value="registrazione" (click)="cercaViaggi()"> Cerca </button>
 <ng-container><a *ngFor="let v of viaggi">
   <div class="row">
     <div class="col-md-6">

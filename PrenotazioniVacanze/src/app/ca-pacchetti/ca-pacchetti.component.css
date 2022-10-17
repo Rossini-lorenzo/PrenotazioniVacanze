@@ -70,22 +70,114 @@ line-height: 30px;
 border-bottom: 2px solid rgb(128, 128, 128);}
 
 
-button{
-  background-color: white;
-color: rgb(46, 134, 216);
-font-family:"Helvetica",  Sans-serif;
-border: 2px solid rgb(46, 134, 216); /* Green */
-transition-duration: 0.4s;
-font-size:35px;
-border-radius: 20px;
-width: 900px;
+button.btn{
+  
+  position:absolute;
+  margin-left:-50px;
+  left:50%;
+  width:100px;
+  bottom:40px;
+  height: 40px;
+  background-color: #fa8072;
+
+  
 
 }
-button:hover{
-  background-color: rgb(46, 134, 216); /* Green */
-  font-family:"Helvetica",  Sans-serif;
-  color: white;
-  font-size:25;
-  border-radius: 20px;
 
+
+
+/*input-nuovi*/
+
+.text-input{ 
+  position: relative;
+  margin-top: 8%;
+ }
+  
+  input[type="text"]{
+  display: inline-block;
+  width: 350px;
+  height: 40px;
+  box-sizing: border-box;
+  outline: none;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+  padding: 10px 10px 10px 110px;
+  transition: all 0.1s ease-out;
+  }
+  
+  input[type="text"] + label{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 40px;
+  line-height: 40px;
+  color: white;
+  border-radius: 3px 0 0 3px;
+  padding: 0 20px;
+  background: #fa8072;
+  transform: translateZ(0) translateX(0);
+  transition: all 0.3s ease-in;
+  transition-delay: 0.2s;
+  }
+  
+  input[type="text"]:focus + label{
+  transform: translateY(-120%) translateX(0%);
+  border-radius: 3px;
+  transition: all 0.1s ease-out;
+  }
+  
+  input[type="text"]:focus{
+  padding: 10px;
+  transition: all 0.3s ease-out;
+  transition-delay: 0.2s;
+  }
+
+  
+
+
+
+
+
+  /* data */
+  label.data{float: left;
+  margin-top: 12%;}
+  label.data2{float: left;
+    margin-top: 28%;}
+
+  input[type="date"].d1{
+    height: 40px;
+    background-color: #fa8072;
+    padding: 15px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 90%;
+    left: 50%;
+    font-family: "Roboto Mono",monospace;
+    color: #ffffff;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+ input[type="date"].d2{
+    height: 40px;
+    background-color: #fa8072;
+    padding: 15px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 90%;
+    left: 50%;
+    font-family: "Roboto Mono",monospace;
+    color: #ffffff;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+::-webkit-calendar-picker-indicator{
+    background-color: #ffffff;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 3px;
 }
