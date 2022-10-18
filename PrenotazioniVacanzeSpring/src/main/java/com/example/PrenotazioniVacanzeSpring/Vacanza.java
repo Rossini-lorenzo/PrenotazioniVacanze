@@ -2,6 +2,7 @@ package com.example.PrenotazioniVacanzeSpring;
 
 import java.io.Serializable;
 import java.sql.Date;
+import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.JoinColumn;
 import javax.persistence.Column;
@@ -15,9 +16,11 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 @Table(name="Vacanza")
 @Entity
-public class Vacanza implements Serializable {
+public class Vacanza  {
     
     public enum tipoMezzo {pullman,treno,aereo};
     @Id
@@ -48,12 +51,17 @@ public class Vacanza implements Serializable {
     private int codViaggioRitornoPacchetto;
     private int codAlloggioPacchetto;
     private String linkImg;
+    /*
 	@ManyToMany
     @JoinTable(name="VACANZE_OFFERTE",
     		joinColumns={@JoinColumn(name="idVacanza")},
     		inverseJoinColumns={@JoinColumn(name="codOfferta")})
-    private Set<Offerta> offerte;
-	
+    private Set<Offerta> offerte= new HashSet<>();
+	*/
+
+    @OneToMany
+    private Set<Offerta> offerte=new HashSet<Offerta>();
+    
 	@OneToMany(mappedBy="Vacanza")
     private Set<Recensione> recensioni;
 	
@@ -64,7 +72,7 @@ public class Vacanza implements Serializable {
 			int nLetti, Double orarioPartenza, Double orarioArrivo, int nBiglietti, String luogoArrivo,
 			String luogoPartenza, com.example.PrenotazioniVacanzeSpring.Vacanza.tipoMezzo tipoMezzo, Date dataInizio,
 			Date dataFine, int codViaggioPacchetto, int codViaggioRitornoPacchetto, int codAlloggioPacchetto,
-			String linkImg, Set<Offerta> offerte, Set<Recensione> recensioni) {
+			String linkImg, Set<Recensione> recensioni) {
 		super();
 		this.idVacanza = idVacanza;
 		this.titolo = titolo;
@@ -90,9 +98,10 @@ public class Vacanza implements Serializable {
 		this.codViaggioRitornoPacchetto = codViaggioRitornoPacchetto;
 		this.codAlloggioPacchetto = codAlloggioPacchetto;
 		this.linkImg = linkImg;
-		this.offerte = offerte;
+		
 		this.recensioni = recensioni;
 	}
+    
 
 	public void setOfferta(Offerta offerta) {
 		this.offerte.add(offerta);
@@ -132,13 +141,6 @@ public class Vacanza implements Serializable {
 		this.recensioni = recensioni;
 	}
 	
-    
-    public Integer getId() {
-        return idVacanza;
-    }
-    public void setId(Integer idVacanza) {
-        this.idVacanza = idVacanza;
-    }
     public int getCodAlloggio() {
         return codAlloggio;
     }

@@ -69,7 +69,7 @@ export class CaAdminComponent implements OnInit {
     this.titolo=this.mioForm2.get("titolo").value
     this.pensione=this.mioForm2.get("pensione").value
     this.linkImg=this.mioForm2.get("linkImg").value
-    this.alloggio=new Alloggio(this.nBagni,this.nStanzaLetto,this.nPartecipanti,this.descrizione
+    this.alloggio=new Alloggio(this.nBagni,this.nStanzaLetto,this.nPartecipanti,this.destinazione
       ,this.descrizione,this.pensione,this.titolo,this.linkImg);
       this.adminService.creaAlloggio(this.alloggio).subscribe(
       (response:any)=>{

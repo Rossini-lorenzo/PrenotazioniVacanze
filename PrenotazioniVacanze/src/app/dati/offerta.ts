@@ -1,23 +1,23 @@
 export class Offerta {
-    idVacanza : number;
+    idVacanzaOfferta : number;
     dataInizio: Date;
     dataFine :  Date;
     prezzo : number;
 
     
   constructor(idVacanza : number,dataInizio: Date,dataFine :  Date,prezzo : number) {
-     this.idVacanza=idVacanza;
+     this.idVacanzaOfferta=idVacanza;
      this.dataFine=dataFine;
      this.dataInizio=dataInizio;
      this.prezzo=prezzo;
 
   }
 
-  public getIdVacanza() : number{
-    return this.idVacanza;
+  public getIdVacanzaOfferta() : number{
+    return this.idVacanzaOfferta;
   }
-  public setIdVacanza(idVacanza: number) {
-    this.idVacanza = idVacanza;
+  public setIdVacanzaOfferta(idVacanzaOfferta: number) {
+    this.idVacanzaOfferta = idVacanzaOfferta;
   }
   public getPrezzo() : number{
     return this.prezzo;

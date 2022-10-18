@@ -2,6 +2,7 @@ package com.example.PrenotazioniVacanzeSpring;
 
 
 import java.sql.Date;
+import java.util.List;
 import java.util.Optional;
 
 import javax.persistence.EnumType;
@@ -100,33 +101,42 @@ public class MainController {
 @PostMapping(path="/addOfferta") // Map ONLY POST Requests
 public ResponseEntity<Object> addNewOfferta (@RequestBody Offerta offerta) {
   // @ResponseBody means the returned String is the n, not a view name
-  // @RequestParam means it is a parameter from the GET or POST request
-	
-	/* Optional<Offerta>o = vacanzaRepository.findByTitolo(alloggio.getTitolo());
-	 if(v.isPresent()) {
-			return new ResponseEntity<Object>("Email già registrata",HttpStatus.BAD_REQUEST);
-		}
-	  */
-	  offerta.setVacanze(vacanzaRepository.findById(offerta.getIdVacanza()).get());
+	// @RequestParam means it is a parameter from the GET or POST reques
+	 
+	 vacanzaRepository.findById(offerta.getIdVacanzaOfferta()).get().setOfferta(offerta);
+	  
 	  offertaRepository.save(offerta);
 	   return new ResponseEntity<Object>(offerta,HttpStatus.OK);
 }
-  
-  /*
-  //AGGIUNTA NUOVA OFFERTA
-  @PostMapping(path="/addOfferta1") // Map ONLY POST Requests
-  public @ResponseBody String addNewOffera1(@RequestParam Integer prezzo,@RequestParam Vacanza vacanza
-		  ,@RequestParam Date dataInizio,@RequestParam Date dataFine) {
-  Offerta o = new Offerta();
-  o.setPrezzo(prezzo);
-  o.setVacanze(vacanza);      // aggiungo una vacanza nel set delle vacanze
-  o.setDateInizio(dataInizio); 
-  o.setDataFine(dataFine);
-  offertaRepository.save(o);
-  return "Saved";
-  }
 
-*/
+@CrossOrigin(origins="*")
+@GetMapping(path="/findAllAlloggi")
+public ResponseEntity<List<Vacanza>> getAllOfferte() {
+  // This returns a JSON or XML with the users
+  List<Vacanza> v =  vacanzaRepository.findAll();
+  return new ResponseEntity<List<Vacanza>>(v,HttpStatus.OK);
+}
+
+@GetMapping(path="/getAlloggi")
+public @ResponseBody List<Vacanza> getAllAlloggi() {
+  // This returns a JSON or XML with the users
+	
+	
+	
+	return   vacanzaRepository.findAll();
+  
+}
+  
+  
+
+
+
+
+
+
+
+
+
   
   //AGGIUNTA NUOVO PACCHETTO
   @PostMapping(path="/addPacchetto") // Map ONLY POST Requests
@@ -215,16 +225,8 @@ public ResponseEntity<Object> addNewOfferta (@RequestBody Offerta offerta) {
     // This returns a JSON or XML with the users
     return utenteRepository.findAll();
   }
-  @GetMapping(path="/getOfferte")
-  public @ResponseBody Iterable<Offerta> getAllOfferte() {
-    // This returns a JSON or XML with the users
-    return offertaRepository.findAll();
-  }
-  @GetMapping(path="/getAlloggi")
-  public @ResponseBody Iterable<Vacanza> getAllAlloggi() {
-    // This returns a JSON or XML with the users
-    return vacanzaRepository.findAll();
-  }
+ 
+  
   @GetMapping(path="/getPacchetti")
   public @ResponseBody Iterable<Vacanza> getAllPacchetti() {
     // This returns a JSON or XML with the users

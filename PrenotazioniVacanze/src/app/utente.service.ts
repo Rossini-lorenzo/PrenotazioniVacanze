@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Utente } from './dati/utente';
 import { UtenteLogin } from './dati/utente-login';
-
+import { Offerta } from './dati/offerta';
 const baseUrl:string="http://localhost:8080/demo"
 @Injectable({
   providedIn: 'root'
@@ -23,6 +23,13 @@ export class UtenteService {
    login(utenteLogin:UtenteLogin){
        return this.http.post<any>(baseUrl+'/login',utenteLogin,this.httpOptions);
    }
+   cercaAlloggi(){
+    return this.http.get<any>(baseUrl+'/findAllAlloggi')
+   }
+
+
+
+
    setLogged(){sessionStorage.setItem("login","true");}
    setLogOut(){sessionStorage.setItem("login","false");}
    getLogged():boolean{

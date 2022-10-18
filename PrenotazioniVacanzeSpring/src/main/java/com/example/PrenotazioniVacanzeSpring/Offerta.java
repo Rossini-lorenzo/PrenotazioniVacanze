@@ -16,9 +16,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 
 
@@ -36,30 +39,26 @@ FOREIGN KEY (`vacanza`) REFERENCES Vacanza(`idVacanza`));
 
 @Entity // This tells Hibernate to make a table out of this class
 @Table(name = "Offerta")
-public class Offerta implements Serializable {
+public class Offerta {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="codOfferta")
     private Integer codOfferta;
     private Integer prezzo;
-    private Date DataInizio;
-    private Date DataFine;
-    private Integer idVacanza;
+    private Date dataInizio;
+    private Date dataFine;
+    private Integer idVacanzaOfferta;
     
     @OneToOne
     @JoinColumn(name = "codPrenotazione")
     private Prenotazione prenotazione;
     
-    @ManyToMany(mappedBy="offerte")
-    private Set<Vacanza> vacanze = new HashSet<>();
+    
+    @ManyToOne
+    @JoinColumn(name="idVacanza")
+    private Vacanza vacanza ;
 
-	public Set<Vacanza> getVacanze() {
-		return vacanze;
-	}
-
-	public void setVacanze(Vacanza v ) {
-		this.vacanze.add(v);
-	}
+	
 
 	public Integer getCodOfferta() {
 		return codOfferta;
@@ -79,30 +78,30 @@ public class Offerta implements Serializable {
 
 	
 
-	public Integer getIdVacanza() {
-		return idVacanza;
+	public Integer getIdVacanzaOfferta() {
+		return idVacanzaOfferta;
 	}
 
-	public void setIdVacanza(Integer idVacanza) {
-		this.idVacanza = idVacanza;
+	public void setIdVacanzaOfferta(Integer idVacanza) {
+		this.idVacanzaOfferta = idVacanza;
 	}
 
 
 
 	public Date getDataInizio() {
-		return DataInizio;
+		return dataInizio;
 	}
 
 	public void setDataInizio(Date DataInizio) {
-		this.DataInizio = DataInizio;
+		this.dataInizio = DataInizio;
 	}
 
 	public Date getDataFine() {
-		return DataFine;
+		return dataFine;
 	}
 
 	public void setDataFine(Date dataFine) {
-		DataFine = dataFine;
+		dataFine = dataFine;
 	}
 
 	public Prenotazione getPrenotazione() {
@@ -111,6 +110,14 @@ public class Offerta implements Serializable {
 
 	public void setPrenotazione(Prenotazione prenotazione) {
 		this.prenotazione = prenotazione;
+	}
+
+	public Vacanza getVacanza() {
+		return vacanza;
+	}
+
+	public void setVacanza(Vacanza vacanza) {
+		this.vacanza = vacanza;
 	}
 
 	
