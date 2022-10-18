@@ -1,7 +1,7 @@
 <div class="image">
     <table border="0" align = "center" cellpadding="0" cellspacing="0">
 <fieldset>
-  <a class="img1" href=""><img src="../assets/logo.png" width="250" height="200" ></a>
+  <div style="text-align: center;"><a href=""><img src="../assets/logo.png" width="250" height="200" ></a></div>
  
 
   <div class="logreg">
@@ -9,100 +9,167 @@
 </div>
  
   
-   
-<form [formGroup]= "mioForm2" (ngSubmit)="aggiungiAlloggio()">
+<!--------------------------------------------------------------------->   
+<br><br><form [formGroup]= "mioForm2" (ngSubmit)="aggiungiAlloggio()">
+
+<!--------------------------------------------------------------------->       
+  <div class="padding: 0px 30px 0px 30px;">
     
-         
-        <div> <label>Destinazione : </label> <input type="text" placeholder="Destinazione" name="Destinazione" id="destinazione" formControlName="destinazione"></div> 
-        <div><label>N Partecipanti : </label>  <input type="number" placeholder="Numero di partecipanti" name="nPartecipanti" id="nPartecipanti" formControlName="nPartecipanti"></div>
-        <div><label>Pensione : </label> <select class="selectpicker"  data-style="btn-primary" formControlName="pensione">
-            <option value="no">Seleziona Pensione</option>
-            <option value="Completa">Completa</option>
-            <option value="Mezza">Mezza</option>
-            <option value="No">No</option>
-          </select></div>
-      <div><label>Titolo : </label> <input type="text" placeholder="titolo" name="titolo" id="titolo" formControlName="titolo"></div>
-          <div><label>N Bagni : </label> <input type="number" placeholder="Numero di bagni " name="nBagni" id="nBagni" formControlName="nBagni"></div>
-          <div><label>N Stanze Letto : </label>  <input type="number" placeholder="Numero stanze letto " name="nLetti" id="nLetti" formControlName="nStanzaLetto"></div>
-          <div><label>Descrizione : </label> <input type="text" placeholder="Descrizione" name="descrizione" id="descrizione" formControlName="descrizione"></div>
-          <div> <label>linkImg : </label> <input type="text" placeholder="linkImg" name="linkImg" id="linkImg" formControlName="linkImg"></div>
+    <div class="row text-center ">
+
+      <div class="col">
+        <label>Destinazione : </label><br>
+        <label>N° Partecipanti : </label><br>
+        <label>Pensione : </label><br>
+        <label>Titolo : </label><br>
+        <label>N° Bagni : </label><br>
+        <label>N° Stanze Letto : </label><br>
+        <label>Descrizione : </label><br>
+        <label>linkImg : </label>
+      </div>
+
+      <div class="col">
+        <input type="text" placeholder="Destinazione" name="Destinazione" id="destinazione" formControlName="destinazione"><br>
+        <input type="number" placeholder="Numero di partecipanti" name="nPartecipanti" id="nPartecipanti" formControlName="nPartecipanti"><br>
+        <select class="selectpicker"  data-style="btn-primary" formControlName="pensione"><br>
+          <option value="no">Seleziona Pensione</option>
+          <option value="Completa">Completa</option>
+          <option value="Mezza">Mezza</option>
+          <option value="No">No</option>
+        </select><br>
+        <input type="text" placeholder="titolo" name="titolo" id="titolo" formControlName="titolo"><br>
+        <input type="number" placeholder="Numero di bagni " name="nBagni" id="nBagni" formControlName="nBagni"><br>
+        <input type="number" placeholder="Numero stanze letto " name="nLetti" id="nLetti" formControlName="nStanzaLetto"><br>
+        <input type="text" placeholder="Descrizione" name="descrizione" id="descrizione" formControlName="descrizione"><br>
+        <input type="text" placeholder="linkImg" name="linkImg" id="linkImg" formControlName="linkImg">
+        </div>
+
+    </div>
+
+  </div>
+<!--------------------------------------------------------------------->
         
-<button type="submit" name="aggiungiAlloggio" value="aggiungiAlloggio" > aggiungi Alloggio </button>
+<br><br><button type="submit" name="aggiungiAlloggio" value="aggiungiAlloggio" > aggiungi Alloggio </button>
 </form>
+<!--------------------------------------------------------------------->
 
-<form [formGroup]= "mioForm3" (ngSubmit)="aggiungiOfferta()">
-  <label class="data2"> DA :</label>
-  <div class="datac2"> <input class=d2 type="date"  id="dateStandard" name="dateStandard" formControlName="dataInizioOfferta"></div>
-  <label class="data2"> A :</label>
-  <div class="datac2"> <input class=d2 type="date"  id="dateStandard" name="dateStandard" formControlName="dataFineOfferta"></div>
-  <div><label>Prezzo :  </label>  <input type="input" placeholder="Prezzo" name="Prezzo" id="Prezzo" formControlName="prezzo"></div>
-  <div><label>Codice Alloggio : </label>  <input type="input" placeholder="idVacanza" name="idVacanza" id="idVacanza" formControlName="idVacanzaOfferta"></div>
-
-         
-  
-<button type="submit" name="aggiungiOfferta" value="aggiungiOfferta" > aggiungi Offerta </button>
-</form>
-
-
-
-<div class="card-body">
-    <!--------------------------------------------------------------------->
-    <form>
-        <div class="row text-center ">
-     <div class="col">
-      <div><label>Titolo : </label> <input type="text" placeholder="Titolo" name="Titolo" id="Titolo"></div>
-      <div><label>Destinazione : </label>  <input type="text" placeholder="Destinazione" name="Destinazione" id="destinazione"></div>
-     <div><label>N Partecipanti : </label> <input type="number" placeholder="Numero di partecipanti" name="nPartecipanti" id="nPartecipanti"></div>
-     <label class="data2"> DA :</label>
-     <div class="datac2"> <input class=d2 type="date"  id="dateStandard" name="dateStandard" ></div>
-
+<br><br><br><form [formGroup]= "mioForm3" (ngSubmit)="aggiungiOfferta()">
+  <!--------------------------------------------------------------------->
+  <div class="padding: 0px 30px 0px 30px;">
     
-    </div>
-     <div class="col">
-     <div><label>Descrizione : </label> <input type="text" placeholder="Descrizione" name="Descrizione" id="Descrizione"></div>
-      <div> <label>linkImg : </label> <input type="text" placeholder="linkImg" name="linkImg" id="linkImg"></div>
-      <label class="data2"> A :</label>
-      <div class="datac2"> <input class=d2 type="date"  id="dateStandard" name="dateStandard" ></div>
+    <div class="row text-center ">
+
+      <div class="col">
+        <label class="data2"> DA :</label><br>
+        <label class="data2"> A :</label><br>
+        <label>Prezzo :  </label><br>
+        <label>Codice Alloggio : </label>
+      </div>
+
+      <div class="col">
+        <input class="d2" type="date"  id="dateStandard1" name="dateStandard1" formControlName="dataInizioOfferta"><br>
+        <input class="d2" type="date"  id="dateStandard2" name="dateStandard2" formControlName="dataFineOfferta"><br>
+        <input type="input" placeholder="Prezzo" name="Prezzo" id="Prezzo" formControlName="prezzo"><br>
+        <input type="input" placeholder="idVacanza" name="idVacanza" id="idVacanza" formControlName="idVacanzaOfferta">
+        </div>
 
     </div>
-        <!--input type="checkbox" name="sconto" value="1">
-        <label for="sconto">&nbsp;Viaggio in sconto</label-->
+
+  </div>
+  <!--------------------------------------------------------------------->
+
+  <br><br><button type="submit" name="aggiungiOfferta" value="aggiungiOfferta" > aggiungi Offerta </button>
+</form>
+<!--------------------------------------------------------------------->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--------------------------------------------------------------------->
+    <br><br><br><form>
+        <!--------------------------------------------------------------------->
+  <div class="padding: 0px 30px 0px 30px;">
+    
+    <div class="row text-center ">
+
+      <div class="col">
+        <label>Titolo : </label><br>
+        <label>Destinazione : </label><br>
+        <label>N° Partecipanti : </label><br>
+        <label>Descrizione : </label><br>
+        <label class="data2"> DA :</label><br>
+        <label class="data2"> A :</label><br>
+        <label>linkImg : </label>
+
+      </div>
+
+      <div class="col">
+        <input type="text" placeholder="Titolo" name="Titolo" id="Titolo"><br>
+        <input type="text" placeholder="Destinazione" name="Destinazione" id="destinazione"><br>
+        <input type="number" placeholder="Numero di partecipanti" name="nPartecipanti" id="nPartecipanti"><br>
+        <input type="text" placeholder="Descrizione" name="Descrizione" id="Descrizione"><br>
+        <div class="datac2"> <input class="d2" type="date"  id="dateStandard1" name="dateStandard1" ></div>
+        <div class="datac2"> <input class="d2" type="date"  id="dateStandard2" name="dateStandard2" ></div>
+        <input type="text" placeholder="linkImg" name="linkImg" id="linkImg">
+
         </div>
+
+    </div>
+
+  </div>
+  <!--------------------------------------------------------------------->
+    <br><br><button type="submit" name="aggiungiPacchetto" value="aggiungiPacchetto" (click)="aggiungiPacchetto()"> aggiungi Pacchetto </button>
     </form>
-    <button type="submit" name="aggiungiPacchetto" value="aggiungiPacchetto" (click)="aggiungiPacchetto()"> aggiungi Pacchetto </button>
 
+
+  
     <!--------------------------------------------------------------------->
-  </div>
-
-
-  <div class="card-body">
-    <!--------------------------------------------------------------------->
-    <form>
+    <br><br><br><form>
         <div class="row text-center ">
-        <div class="col">
-        <div><label>Partenza : </label> <input type="text" placeholder="Partenza" name="Partenza" id="partenza"></div>
-        <div> <label>Destinazione : </label> <input type="text" placeholder="Destinazione" name="Destinazione" id="destinazione"></div>
-        <div><label>N Biglietti : </label> <input type="number" placeholder="Biglietti" name="nBiglietti" id="nBiglietti"></div>
-        <label class="data2"> DA :</label>
-        <div class="datac2"> <input class=d2 type="date"  id="dateStandard" name="dateStandard" ></div>
 
-      </div>
-        <div class="col">
-        <div> <label>Andata : </label> <input type="datetime" placeholder="Andata" name="Andata" id="andata"></div>
-        <div><label>Ritorno : </label> <input type="datetime" placeholder="Ritorno" name="Ritorno" id="ritorno"></div>
-        <div><label>Titolo : </label> <input type="text" placeholder="Titolo" name="Titolo" id="Titolo"></div>
-        <div><label>Descrizione : </label> <input type="text" placeholder="Descrizione" name="Descrizione" id="Descrizione"></div>
-        <div> <label>linkImg : </label> <input type="text" placeholder="linkImg" name="linkImg" id="linkImg"></div>
-        <label class="data2"> A :</label>
-        <div class="datac2"> <input class=d2 type="date"  id="dateStandard" name="dateStandard" ></div>
+          <div class="col">
+            <label>Partenza : </label><br>
+            <label>Andata : </label> <br>
+            <label>Destinazione : </label> <br>
+            <label>Ritorno : </label> <br>
+            <label>N° Biglietti : </label> <br>
+            <label>Titolo : </label> <br>
+            <label>Descrizione : </label> <br>
+            <label class="data2"> DA :</label><br>
+            <label class="data2"> A :</label><br>
+            <label>linkImg : </label> 
+          </div>
 
-      </div>
+          <div class="col">
+            <input type="text" placeholder="Partenza" name="Partenza" id="partenza"><br>
+            <input type="datetime" placeholder="Andata" name="Andata" id="andata"><br>
+            <input type="text" placeholder="Destinazione" name="Destinazione" id="destinazione"><br>
+            <input type="datetime" placeholder="Ritorno" name="Ritorno" id="ritorno"><br>
+            <input type="number" placeholder="Biglietti" name="nBiglietti" id="nBiglietti"><br>
+            <input type="text" placeholder="Titolo" name="Titolo" id="Titolo"><br>
+            <input type="text" placeholder="Descrizione" name="Descrizione" id="Descrizione"><br>
+            <div class="datac2"> 
+              <input class="d2" type="date"  id="dateStandard1" name="dateStandard1" ></div>
+            <div class="datac2"> 
+              <input class="d2" type="date"  id="dateStandard2" name="dateStandard2" ></div>
+            <input type="text" placeholder="linkImg" name="linkImg" id="linkImg">
+          </div>
+
         </div>
-      </form>
-    <button type="submit" name="aggiungiViaggio" value="aggiungiViaggio" (click)="aggiungiViaggio()"> aggiungi Viaggio </button>
+        <br><br><button type="submit" name="aggiungiViaggio" value="aggiungiViaggio" (click)="aggiungiViaggio()"> aggiungi Viaggio </button>
+    </form>
 
     <!--------------------------------------------------------------------->
-  </div>
 
 
 </fieldset>
