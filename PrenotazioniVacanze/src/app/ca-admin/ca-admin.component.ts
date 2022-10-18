@@ -23,10 +23,10 @@ export class CaAdminComponent implements OnInit {
   linkImg:string;
   nPartecipanti:number;
 
-  dataFineAlloggio:Date;
-  dataInizioAlloggio:Date;
+  dataFineOfferta:Date;
+  dataInizioOfferta:Date;
   prezzo:number;
-  idVacanzaAlloggio:number;
+  idVacanzaOfferta:number;
 
   constructor(private fb: FormBuilder,private adminService:AdminService) {
     this.nBagni=0;
@@ -40,10 +40,10 @@ export class CaAdminComponent implements OnInit {
     this.alloggio=null;
 
 
-    this.dataFineAlloggio=null;
-    this.dataInizioAlloggio=null;
+    this.dataFineOfferta=null;
+    this.dataInizioOfferta=null;
     this.prezzo=0;
-    this.idVacanzaAlloggio=0;
+    this.idVacanzaOfferta=0;
     this.offerta=null;
    }
 
@@ -54,8 +54,8 @@ export class CaAdminComponent implements OnInit {
       })
 
     this.mioForm3 = this.fb.group({
-        prezzo: 0,idVacanzaAlloggio: 0,
-        dataFineAlloggio:null,dataInizioAlloggio:null
+        prezzo: 0,idVacanzaOfferta: 0,
+        dataFineOfferta:null,dataInizioOfferta:null
         })
   }
   aggiungiViaggio(){}
@@ -66,7 +66,6 @@ export class CaAdminComponent implements OnInit {
     this.nStanzaLetto=this.mioForm2.get("nStanzaLetto").value
     this.destinazione=this.mioForm2.get("destinazione").value
     this.descrizione=this.mioForm2.get("descrizione").value
-
     this.titolo=this.mioForm2.get("titolo").value
     this.pensione=this.mioForm2.get("pensione").value
     this.linkImg=this.mioForm2.get("linkImg").value
@@ -82,10 +81,10 @@ export class CaAdminComponent implements OnInit {
   }
   aggiungiOfferta(){
     this.prezzo=this.mioForm3.get("prezzo").value
-    this.idVacanzaAlloggio=this.mioForm3.get("idVacanzaAlloggio").value
-    this.dataFineAlloggio=this.mioForm3.get("dataFineAlloggio").value
-    this.dataInizioAlloggio=this.mioForm3.get("dataInizioAlloggio").value
-    this.offerta=new Offerta(this.idVacanzaAlloggio,this.dataInizioAlloggio,this.dataFineAlloggio,this.prezzo);
+    this.idVacanzaOfferta=this.mioForm3.get("idVacanzaOfferta").value
+    this.dataFineOfferta=this.mioForm3.get("dataFineOfferta").value
+    this.dataInizioOfferta=this.mioForm3.get("dataInizioOfferta").value
+    this.offerta=new Offerta(this.idVacanzaOfferta,this.dataInizioOfferta,this.dataFineOfferta,this.prezzo);
     this.adminService.creaOfferta(this.offerta).subscribe(
       (response:any)=>{
         alert("offerta creato")
