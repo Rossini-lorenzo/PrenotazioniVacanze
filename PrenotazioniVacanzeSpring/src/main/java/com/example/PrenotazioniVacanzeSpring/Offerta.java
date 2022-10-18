@@ -1,7 +1,9 @@
 package com.example.PrenotazioniVacanzeSpring;
 
+import java.io.Serializable;
 import java.sql.Date;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
 
@@ -34,13 +36,13 @@ FOREIGN KEY (`vacanza`) REFERENCES Vacanza(`idVacanza`));
 
 @Entity // This tells Hibernate to make a table out of this class
 @Table(name = "Offerta")
-public class Offerta {
+public class Offerta implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="codOfferta")
     private Integer codOfferta;
     private Integer prezzo;
-    private Date DateInizio;
+    private Date DataInizio;
     private Date DataFine;
     private Integer idVacanza;
     
@@ -49,13 +51,13 @@ public class Offerta {
     private Prenotazione prenotazione;
     
     @ManyToMany(mappedBy="offerte")
-    private Set<Vacanza> vacanze;
+    private Set<Vacanza> vacanze = new HashSet<>();
 
 	public Set<Vacanza> getVacanze() {
 		return vacanze;
 	}
 
-	public void addVacanza(Vacanza v ) {
+	public void setVacanze(Vacanza v ) {
 		this.vacanze.add(v);
 	}
 
@@ -85,16 +87,14 @@ public class Offerta {
 		this.idVacanza = idVacanza;
 	}
 
-	public void setVacanze(Set<Vacanza> vacanze) {
-		this.vacanze = vacanze;
+
+
+	public Date getDataInizio() {
+		return DataInizio;
 	}
 
-	public Date getDateInizio() {
-		return DateInizio;
-	}
-
-	public void setDateInizio(Date dateInizio) {
-		DateInizio = dateInizio;
+	public void setDataInizio(Date DataInizio) {
+		this.DataInizio = DataInizio;
 	}
 
 	public Date getDataFine() {

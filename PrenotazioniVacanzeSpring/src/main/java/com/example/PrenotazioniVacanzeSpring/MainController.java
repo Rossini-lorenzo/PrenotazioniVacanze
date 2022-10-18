@@ -107,6 +107,7 @@ public ResponseEntity<Object> addNewOfferta (@RequestBody Offerta offerta) {
 			return new ResponseEntity<Object>("Email già registrata",HttpStatus.BAD_REQUEST);
 		}
 	  */
+	  offerta.setVacanze(vacanzaRepository.findById(offerta.getIdVacanza()).get());
 	  offertaRepository.save(offerta);
 	   return new ResponseEntity<Object>(offerta,HttpStatus.OK);
 }
@@ -139,7 +140,7 @@ public ResponseEntity<Object> addNewOfferta (@RequestBody Offerta offerta) {
   p.setCodViaggioPacchetto(codViaggioPacchetto);
   p.setCodAlloggioPacchetto(codAlloggioPacchetto);
   p.setCodViaggioRitornoPacchetto(codViaggioRitorno);
-  p.setOfferte(offerta);
+  //p.setOfferte(offerta);
   vacanzaRepository.save(p);
   return "Saved";
   }
@@ -159,7 +160,7 @@ public ResponseEntity<Object> addNewOfferta (@RequestBody Offerta offerta) {
   v.setLuogoPartenza(luogoPartenza);
   v.setLuogoArrivo(luogoArrivo);
   v.setTipoMezzo(tipoMezzo);
-  v.setOfferte(offerta);
+  //v.setOfferte(offerta);
   vacanzaRepository.save(v);
   return "Saved";
   } 
@@ -186,7 +187,6 @@ public ResponseEntity<Object> addNewOfferta (@RequestBody Offerta offerta) {
 		  @RequestParam Prenotazione prenotazione,@RequestParam String descrizione) {
   StoricoPrenotazione s = new StoricoPrenotazione();
   s.setPrezzo(offerta.getPrezzo());
-  s.setDataInizio(offerta.getDateInizio());
   s.setDataFine(offerta.getDataFine());
   s.setUtente(utente);
   s.setDescrizione(descrizione);

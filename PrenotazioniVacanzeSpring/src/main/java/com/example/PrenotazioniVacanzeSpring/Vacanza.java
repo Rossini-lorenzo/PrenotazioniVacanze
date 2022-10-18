@@ -94,8 +94,8 @@ public class Vacanza implements Serializable {
 		this.recensioni = recensioni;
 	}
 
-	public void setOfferte(Set<Offerta> offerte) {
-		this.offerte = offerte;
+	public void setOfferta(Offerta offerta) {
+		this.offerte.add(offerta);
 	}
 
 	public int getCodViaggioPacchetto() {
@@ -124,9 +124,6 @@ public class Vacanza implements Serializable {
 	}
 	public Set<Offerta> getOfferte() {
 		return offerte;
-	}
-	public void setOfferte(Offerta offerta) {
-		this.offerte.add(offerta);
 	}
 	public Set<Recensione> getRecensioni() {
 		return recensioni;

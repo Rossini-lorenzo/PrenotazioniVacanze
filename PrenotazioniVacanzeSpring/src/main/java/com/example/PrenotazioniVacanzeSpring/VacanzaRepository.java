@@ -8,5 +8,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface VacanzaRepository extends JpaRepository <Vacanza, Integer> {
 	Optional<Vacanza> findByTitolo(String titolo);
+	Optional<Vacanza> findById(Integer idVacanza);
+
 
 }
