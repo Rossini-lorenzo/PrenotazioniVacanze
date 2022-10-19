@@ -15,6 +15,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
@@ -59,6 +60,9 @@ public class Vacanza  {
     private Set<Offerta> offerte= new HashSet<>();
 	*/
 
+    @OneToMany
+    private Set<Prenotazione> prenotazioni;
+    
     @OneToMany
     private Set<Offerta> offerte=new HashSet<Offerta>();
     
