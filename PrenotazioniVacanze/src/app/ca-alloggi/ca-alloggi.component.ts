@@ -3,6 +3,7 @@ import { UtenteService } from '../utente.service';
 import {FormGroup,FormControl,FormBuilder} from '@angular/forms';
 import { Offerta } from '../dati/offerta';
 import { AlloggioGet } from '../dati/alloggio-get';
+import { Prenotazione } from '../dati/prenotazione';
 @Component({
   selector: 'app-ca-alloggi',
   templateUrl: './ca-alloggi.component.html',
@@ -18,6 +19,8 @@ export class CaAlloggiComponent implements OnInit {
   dataFine : Date;
   nPresone : number;
   destinazione : string;
+  prenotazione : Prenotazione;
+  aGet:AlloggioGet;
 
   constructor(private fb: FormBuilder,private utenteService : UtenteService) { 
    this.viaggi=[];
@@ -39,6 +42,26 @@ export class CaAlloggiComponent implements OnInit {
     this.utenteService.setLogOut();
     this.utenteService.setLogOutAdmin();
   }
+  prenota(codiceOfferta : number, titolo:string ,nPartecipanti : number):void{
+    if(this.utenteService.getLogged()==false){
+      alert("bisogna essere registrati e autenticati per poter prenotare");
+      return;
+    } 
+    
+     this.prenotazione = new Prenotazione(nPartecipanti,titolo,Number(sessionStorage.getItem("id")),codiceOfferta);
+     this.utenteService.prenotazione(this.prenotazione).subscribe(
+      (response:any)=>{     
+        alert("Alloggio prenotato e inserito nelle prenotazioni"+"\n"+
+              "id prenotazione : "+response.codPrenotazione);
+
+
+      },
+      (error:any)=>{alert("qualcosa è andato storto riprova");}
+     )
+
+    
+
+  }
   cercaAlloggi():void{
     this.viaggi=[];
     this.destinazione=this.mioForm4.get("destinazione").value;
@@ -55,7 +78,13 @@ export class CaAlloggiComponent implements OnInit {
             for(let x in  response[i].offerte){
                if( response[i].offerte[x].dataInizio==this.dataInizio&&
                 response[i].offerte[x].dataFine==this.dataFine){
-                   this.viaggi.push(new AlloggioGet(response[i]));
+                    this.aGet= new AlloggioGet(response[i])
+                    this.aGet.dataFine=this.dataInizio;
+                    this.aGet.dataInizio=this.dataInizio;
+                    this.aGet.codOfferta=response[i].offerte[x].codOfferta;
+                    this.aGet.prezzo=response[i].offerte[x].prezzo;
+                   this.viaggi.push(this.aGet);
+                   
                 }
             }
           }

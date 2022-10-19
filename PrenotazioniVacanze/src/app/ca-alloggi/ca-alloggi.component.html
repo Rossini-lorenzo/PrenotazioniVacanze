@@ -83,13 +83,14 @@
           <div class="card-body d-flex flex-column align-items-start">
              <strong class="d-inline-block mb-2 text-primary">{{v.titolo}}</strong>
              <h6 class="mb-0">
-                <a class="text-dark" href="#">40 Percent of People Can’t Afford Basics</a>
+                <a class="text-dark" >{{v.prezzo}} € </a>
              </h6>
-             <div class="mb-1 text-muted small">Nov 12</div>
+            
+             <div class="mb-1 text-muted small">{{v.dataInizio}} / {{v.dataFine}}</div>
              <p class="card-text mb-auto">{{v.descrizione}}</p>
-             <a class="btn btn-outline-primary btn-sm" role="button" href="http://www.jquery2dotnet.com/">Prenota</a>
+             <button class="btn btn-outline-primary btn-sm" type="button" (click)="prenota(v.codOfferta,v.titolo,v.nPartecipanti)">Prenota</button>
           </div>
-          <img class="card-img-right flex-auto d-none d-lg-block" alt="Thumbnail [200x250]" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxopvB75Bgx-iMXhEQYKh-Q4skt95w835dig&usqp=CAU" style="width: 200px; height: 250px;">
+          <img class="card-img-right flex-auto d-none d-lg-block" alt="Thumbnail [200x250]" src={{v.linkImg}} style="width: 200px; height: 250px;">
        </div>
     </div>
   </div>

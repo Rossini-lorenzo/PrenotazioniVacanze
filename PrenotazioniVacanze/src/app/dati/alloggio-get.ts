@@ -9,6 +9,10 @@ export class AlloggioGet {
     pensione:string;
     titolo:string;
     linkImg:string;
+    dataFine:Date;
+    dataInizio:Date;
+    prezzo:number;
+    codOfferta:number
 
 
 
@@ -79,5 +83,35 @@ public getNBagni() : number {
   }
   public setLinkImg( linkImg : string) {
     this.linkImg = linkImg;
+  }
+
+  public getDataFine() : Date {
+    return this.dataFine;
+  }
+  public setDataFine( dataFine : Date) {
+    this.dataFine = dataFine;
+  }
+
+  public getDataInizio() : Date {
+    return this.dataInizio;
+  }
+  public setdataInizio( dataInizio : Date) {
+    this.dataInizio = dataInizio;
+  }
+
+  public getPrezzo() : number {
+    return this.prezzo;
+
+  }
+  public setPrezzo(prezzo : number) {
+    this.prezzo = prezzo;
+  }
+
+  public getcodOfferta() : number {
+    return this.codOfferta;
+
+  }
+  public setcodOfferta(codOfferta : number) {
+    this.codOfferta = codOfferta;
   }
 }

@@ -30,8 +30,9 @@ export class CaLoginComponent implements OnInit {
   this.password=this.mioForm.get("password").value
   this.user = new UtenteLogin(this.email,this.password);
   this.serviceUtente.login(this.user).subscribe(
-    (response:Utente)=>{
+    (response:any)=>{
       if(response.admin==true){this.serviceUtente.setLoggedAdmin()}
+      sessionStorage.setItem("id",response.id);
       this.serviceUtente.setLogged();
       this.router.navigate(['/alloggi'])
     },

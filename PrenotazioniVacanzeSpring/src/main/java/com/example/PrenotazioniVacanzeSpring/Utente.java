@@ -21,7 +21,7 @@ import javax.persistence.Table;
 
 @Entity // This tells Hibernate to make a table out of this class
 @Table(name = "Utente")
-public class Utente implements Serializable{
+public class Utente {
 	
   public enum Sesso {m,f}
 	
@@ -41,9 +41,9 @@ public class Utente implements Serializable{
   private String nomeUtente;
   private String passwordUtente;
   private boolean admin;
-  @OneToMany(mappedBy="Utente")
+  @OneToMany
   private Set<Prenotazione> prenotazioni;
-  @OneToMany(mappedBy="Utente")
+  @OneToMany
   private Set<StoricoPrenotazione> storicoPrenotazioni;
   
   public Utente() {}

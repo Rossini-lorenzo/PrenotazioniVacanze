@@ -129,9 +129,31 @@ public @ResponseBody List<Vacanza> getAllAlloggi() {
   
   
 
+@CrossOrigin(origins="*")
+@PostMapping(path="/prenotaAlloggio") // Map ONLY POST Requests
+public ResponseEntity<Object> addNewPrenotazione (@RequestBody prenotazioneGet prenotazione) {
+  // @ResponseBody means the returned String is the n, not a view name
+  // @RequestParam means it is a parameter from the GET or POST request
+	Prenotazione p = new Prenotazione();
+	p.setOfferta(offertaRepository.findById(prenotazione.getOfferta()).get());
+	p.setUtente(utenteRepository.findById(prenotazione.getUtente()).get());
 
+	p.setnPartecipanti(prenotazione.getnPartecipanti());
+	p.setTitolo(prenotazione.getTitolo());
+	prenotazioneRepository.save(p);
+	
+	return new ResponseEntity<Object>(p,HttpStatus.OK);
+		
 
-
+}
+/*
+@GetMapping(path="/getPrenotazioni")
+public @ResponseBody Iterable<Prenotazione> getPrenotazioni(@RequestParam String id) {
+  // This returns a JSON or XML with the users
+	utenteRepository.findById(Parase)
+	return new ResponseEntity<Object>(,HttpStatus.OK);
+}
+*/
 
 
 

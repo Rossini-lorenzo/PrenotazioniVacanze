@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Utente } from './dati/utente';
 import { UtenteLogin } from './dati/utente-login';
 import { Offerta } from './dati/offerta';
+import { Prenotazione } from './dati/prenotazione';
 const baseUrl:string="http://localhost:8080/demo"
 @Injectable({
   providedIn: 'root'
@@ -26,12 +27,17 @@ export class UtenteService {
    cercaAlloggi(){
     return this.http.get<any>(baseUrl+'/findAllAlloggi')
    }
+   prenotazione(prenotazione : Prenotazione ){
+    return this.http.post<any>(baseUrl+'/prenotaAlloggio',prenotazione,this.httpOptions);
+   }
 
 
 
 
    setLogged(){sessionStorage.setItem("login","true");}
-   setLogOut(){sessionStorage.setItem("login","false");}
+   setLogOut(){
+    sessionStorage.setItem("login","false");
+    sessionStorage.setItem("id","x");}
    getLogged():boolean{
      if(sessionStorage.getItem("login")=="true"){
       return true;
