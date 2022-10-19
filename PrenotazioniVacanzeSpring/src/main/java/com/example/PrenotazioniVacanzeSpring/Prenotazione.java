@@ -35,8 +35,12 @@ public class Prenotazione {
     @OneToOne(mappedBy="prenotazione")
     private StoricoPrenotazione storicoPrenotazione;
     
-    @OneToOne(mappedBy="prenotazione")
-    private Offerta offerta;
+    @ManyToOne
+    @JoinColumn(name="idVacanza")
+    private Vacanza vacanza;
+    
+    @OneToOne
+    private Offerta offertaPrenotazione;
 
 	public Integer getCodPrenotazione() {
 		return codPrenotazione;
@@ -81,13 +85,22 @@ public class Prenotazione {
 		this.storicoPrenotazione = storicoPrenotazione;
 	}
 
-	public Offerta getOfferta() {
-		return offerta;
+	public Offerta getOffertaPrenotazione() {
+		return offertaPrenotazione;
 	}
 
-	public void setOfferta(Offerta offerta) {
-		this.offerta = offerta;
+	public void setOffertaPrenotazione(Offerta offertaPrenotazione) {
+		this.offertaPrenotazione = offertaPrenotazione;
 	}
+
+	public Vacanza getVacanza() {
+		return vacanza;
+	}
+
+	public void setVacanza(Vacanza vacanza) {
+		this.vacanza = vacanza;
+	}
+	
     
     
    

@@ -30,6 +30,10 @@ export class UtenteService {
    prenotazione(prenotazione : Prenotazione ){
     return this.http.post<any>(baseUrl+'/prenotaAlloggio',prenotazione,this.httpOptions);
    }
+   getPrenotazioni(id : string){
+    return this.http.get<any>(baseUrl+'/getPrenotazioni?id='+id);
+
+   }
 
 
 

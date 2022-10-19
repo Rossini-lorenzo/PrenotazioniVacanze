@@ -18,16 +18,18 @@
         
         <fieldset class="interno">
         
-            <label *ngFor="let item of prova">
+            <label *ngFor="let item of prenotazioni">
                 <div class="card" style="width: 18rem;">
-                    <div><img src="../assets/work_in_progress.png" style="width: 65%;height: 65%; padding-left: auto;padding-right: auto;" class="card-img-top"></div>
+                    <div><img src={{item.imgLink}} style="width: 65%;height: 65%; padding-left: auto;padding-right: auto;" class="card-img-top"></div>
                     <div class="card-body">
-                        <a href="#"><h4>*titolo*</h4></a>
-                        <hr><p class="card-text">*vacanza.descrizione*</p>
-                        <hr><p class="card-text">*vacanza.destinazione*</p>
-                        <hr><p class="card-text">*offerta.dataInizio e dataFine*</p>
-                        <hr><p class="card-text">*€ offerta.prezzo*</p>
-                        <hr><p class="card-text">*<label style="color: red;">finita</label>*<label style="color: blue;">in corso</label>*<label style="color: green;">ancora deve iniziare</label>*</p>
+                        <a href="#"><h4>{{item.titolo}}</h4></a>
+                        <hr><p class="card-text">{{item.descrizione}}</p>
+                        <hr><p class="card-text">destinazione : {{item.destinazione}}</p>
+                        <hr><p class="card-text">{{item.dataInizio}} / {{item.dataFine}}</p>
+                        <hr><p class="card-text">prezzo : {{item.prezzo}} € </p>
+                        <hr><p class="card-text">N° persone : {{item.nPartecipanti}} </p>
+                        <hr><p class="card-text">codice prenotazione : {{item.codPrenotazione}}</p>
+
                     </div>
                 </div>
             </label>

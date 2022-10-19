@@ -5,6 +5,12 @@ export class Prenotazione {
     titolo : string;
     utente : number; 
     offerta : number;
+    dataInizio : Date;
+    dataFine : Date;
+    destinazione:string;
+    descrizione:string;
+    prezzo:number;
+    imgLink:string;
 
 
     constructor(nPartecipanti: number, titolo : string,

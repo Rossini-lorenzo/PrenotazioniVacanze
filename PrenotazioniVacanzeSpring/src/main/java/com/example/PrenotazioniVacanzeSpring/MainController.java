@@ -2,12 +2,16 @@ package com.example.PrenotazioniVacanzeSpring;
 
 
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
 
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 
+import org.hibernate.mapping.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -117,16 +121,6 @@ public ResponseEntity<List<Vacanza>> getAllOfferte() {
   return new ResponseEntity<List<Vacanza>>(v,HttpStatus.OK);
 }
 
-@GetMapping(path="/getAlloggi")
-public @ResponseBody List<Vacanza> getAllAlloggi() {
-  // This returns a JSON or XML with the users
-	
-	
-	
-	return   vacanzaRepository.findAll();
-  
-}
-  
   
 
 @CrossOrigin(origins="*")
@@ -135,25 +129,35 @@ public ResponseEntity<Object> addNewPrenotazione (@RequestBody prenotazioneGet p
   // @ResponseBody means the returned String is the n, not a view name
   // @RequestParam means it is a parameter from the GET or POST request
 	Prenotazione p = new Prenotazione();
-	p.setOfferta(offertaRepository.findById(prenotazione.getOfferta()).get());
+	p.setOffertaPrenotazione(offertaRepository.findById(prenotazione.getOfferta()).get());
 	p.setUtente(utenteRepository.findById(prenotazione.getUtente()).get());
-
 	p.setnPartecipanti(prenotazione.getnPartecipanti());
 	p.setTitolo(prenotazione.getTitolo());
+	p.setVacanza(vacanzaRepository.findById(p.getOffertaPrenotazione().getIdVacanzaOfferta()).get());
 	prenotazioneRepository.save(p);
-	
+	//utenteRepository.findById(prenotazione.getUtente()).get().setPrenotazioni(p);	
 	return new ResponseEntity<Object>(p,HttpStatus.OK);
 		
 
 }
-/*
+@CrossOrigin(origins="*")
 @GetMapping(path="/getPrenotazioni")
-public @ResponseBody Iterable<Prenotazione> getPrenotazioni(@RequestParam String id) {
+public ResponseEntity <List<Prenotazione>> getPrenotazioni(@RequestParam String id) {
   // This returns a JSON or XML with the users
-	utenteRepository.findById(Parase)
-	return new ResponseEntity<Object>(,HttpStatus.OK);
+	 List<Prenotazione> v = new ArrayList();
+	 List<Prenotazione> array = prenotazioneRepository.findAll();
+	 for (Prenotazione x : array) 
+	 {  
+		 if(x.getUtente().getId()==Integer.valueOf(id)) {
+	    	  v.add(x);
+	      }
+	 }
+	
+
+	 return new ResponseEntity<List<Prenotazione>>(v,HttpStatus.OK);
+
 }
-*/
+
 
 
 
@@ -231,7 +235,7 @@ public @ResponseBody Iterable<Prenotazione> getPrenotazioni(@RequestParam String
   public @ResponseBody String addNewPrenotazione (@RequestParam Offerta offerta,@RequestParam Utente utente,
 		  @RequestParam StoricoPrenotazione storicoPrenotazione) {
   Prenotazione p = new Prenotazione();
-  p.setOfferta(offerta);
+  //p.setOfferta(offerta);
   p.setUtente(utente);
   p.setStoricoPrenotazione(storicoPrenotazione);
   prenotazioneRepository.save(p);

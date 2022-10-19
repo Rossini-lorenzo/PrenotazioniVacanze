@@ -137,8 +137,8 @@ public void setPasswordUtente(String passwordUtente) {
 public Set<Prenotazione> getPrenotazioni() {
 	return prenotazioni;
 }
-public void setPrenotazioni(Set<Prenotazione> prenotazioni) {
-	this.prenotazioni = prenotazioni;
+public void setPrenotazioni(Prenotazione prenotazioni) {
+	this.prenotazioni.add(prenotazioni) ;
 }
 public Set<StoricoPrenotazione> getStoricoPrenotazioni() {
 	return storicoPrenotazioni;
