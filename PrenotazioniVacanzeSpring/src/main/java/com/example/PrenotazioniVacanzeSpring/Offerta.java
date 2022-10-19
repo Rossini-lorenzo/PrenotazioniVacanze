@@ -101,7 +101,7 @@ public class Offerta {
 	}
 
 	public void setDataFine(Date dataFine) {
-		dataFine = dataFine;
+		this.dataFine = dataFine;
 	}
 
 	public Prenotazione getPrenotazione() {

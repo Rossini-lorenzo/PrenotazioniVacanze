@@ -40,7 +40,7 @@ export class CaAlloggiComponent implements OnInit {
     this.utenteService.setLogOutAdmin();
   }
   cercaAlloggi():void{
-
+    this.viaggi=[];
     this.destinazione=this.mioForm4.get("destinazione").value;
     this.dataFine=this.mioForm4.get("dataFine").value;
     this.dataInizio=this.mioForm4.get("dataInizio").value;
@@ -49,8 +49,15 @@ export class CaAlloggiComponent implements OnInit {
       (response : any)=>{
         for(let i in response){
           console.log(this.destinazione);
-          if(response[i].destinazione==this.destinazione){
-            this.viaggi.push(new AlloggioGet(response[i]));
+          if(response[i].destinazione==this.destinazione&&
+            response[i].nPartecipanti==this.nPresone)
+          {
+            for(let x in  response[i].offerte){
+               if( response[i].offerte[x].dataInizio==this.dataInizio&&
+                response[i].offerte[x].dataFine==this.dataFine){
+                   this.viaggi.push(new AlloggioGet(response[i]));
+                }
+            }
           }
         }
       },
