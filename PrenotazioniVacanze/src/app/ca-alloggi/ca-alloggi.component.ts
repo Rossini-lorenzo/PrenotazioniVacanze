@@ -87,6 +87,7 @@ export class CaAlloggiComponent implements OnInit {
                     this.aGet.dataInizio=this.dataInizio;
                     this.aGet.codOfferta=response[i].offerte[x].codOfferta;
                     this.aGet.prezzo=response[i].offerte[x].prezzo;
+                    this.aGet.nStanzaLetto=response[i].nStanzeLetto;
                    this.viaggi.push(this.aGet);
                    
                 
@@ -98,5 +99,17 @@ export class CaAlloggiComponent implements OnInit {
 
       }
     )
+  }
+
+  ordinaPerPrezzo(){
+      this.viaggi.sort((a,b)=> {
+        if(a.prezzo>b.prezzo)
+           {return 1}
+        if(a.prezzo<b.prezzo)
+           {return -1;}
+        return 0;
+      });
+
+
   }
 }
