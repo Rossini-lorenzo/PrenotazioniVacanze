@@ -70,6 +70,17 @@ border-radius: 8px;
 line-height: 30px;
 border-bottom: 2px solid rgb(128, 128, 128);}
 
+button.btn1{
+  color:white;
+  background-color: rgb(125, 128, 133);
+  border: 2px solid rgb(125, 128, 133);
+}
+
+button.btn1:hover{
+  color:white;
+  background-color: rgba(125, 128, 133, 0.425);
+  border: 2px solid rgba(125, 128, 133, 0.425);
+}
 
 button{
   background-color: white;

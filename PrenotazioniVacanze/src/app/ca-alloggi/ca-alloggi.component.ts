@@ -121,4 +121,5 @@ export class CaAlloggiComponent implements OnInit {
 
 
   }
+  
 }
