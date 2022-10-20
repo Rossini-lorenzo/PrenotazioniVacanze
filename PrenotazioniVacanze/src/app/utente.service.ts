@@ -34,7 +34,10 @@ export class UtenteService {
     return this.http.get<any>(baseUrl+'/getPrenotazioni?id='+id);
 
    }
+   getUtente(id : string){
+    return this.http.get<any>(baseUrl+'/getUtente?id='+id);
 
+   }
 
 
 

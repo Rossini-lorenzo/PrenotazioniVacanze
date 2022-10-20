@@ -48,6 +48,7 @@ public class Offerta {
     private Date dataInizio;
     private Date dataFine;
     private Integer idVacanzaOfferta;
+    private boolean disponibile=true;
     
     @OneToOne
     @JoinColumn(name = "codPrenotazione")
@@ -119,6 +120,15 @@ public class Offerta {
 	public void setVacanza(Vacanza vacanza) {
 		this.vacanza = vacanza;
 	}
+
+	public boolean isDisponibile() {
+		return disponibile;
+	}
+
+	public void setDisponibile(boolean disponibile) {
+		this.disponibile = disponibile;
+	}
+	
 
 	
     

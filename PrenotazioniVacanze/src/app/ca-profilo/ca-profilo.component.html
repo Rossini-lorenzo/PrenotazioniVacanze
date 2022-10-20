@@ -20,21 +20,21 @@
         <img src="../../assets/user_icona.png" width="75" height="75"><br><br>
         <p>
         <!------------------------------------------------------------>
-        <p>Nome: *nome*</p>
+        <p>Nome: {{nome}}</p>
             
         
         <!------------------------------------------------------------>
-        <p>Cognome: *cognome*</p>
+        <p>Cognome: {{this.cognome}}</p>
 
         
         
         <!------------------------------------------------------------>
 
-        <p>Nome utente: *nome utente*</p>
+        <p>Nome utente: {{this.nomeUtente}}</p>
             
         
         <!------------------------------------------------------------>
-        Email: <label *ngIf="modificaEmail==false; else mEmail">*email*&nbsp;<button (click)="toggleEmail();">Modifica</button></label>
+        Email: <label *ngIf="modificaEmail==false; else mEmail">{{this.email}}&nbsp;<button (click)="toggleEmail();">Modifica</button></label>
         <ng-template #mEmail>
             
             <input type="email" placeholder="Email" name="email" id="email" required>
@@ -43,15 +43,15 @@
             
         <br>
         <!------------------------------------------------------------>
-        <p>Data di nascita: *data di nascita*</p>
+        <p>Data di nascita: {{this.dataNascita}}</p>
             
         
         <!------------------------------------------------------------>
-        <p>Indirizzo: *indirizzo*</p>
+        <p>Indirizzo: {{this.indirizzo}}</p>
             
         
         <!------------------------------------------------------------>
-        Telefono: <label *ngIf="modificaTelefono==false; else mTelefono">*telefono*&nbsp;<button (click)="toggleTelefono();">Modifica</button></label>
+        Telefono: <label *ngIf="modificaTelefono==false; else mTelefono">{{this.telfono}}&nbsp;<button (click)="toggleTelefono();">Modifica</button></label>
         <ng-template #mTelefono>
             
             <input type="tel" placeholder="Numero di telefono" name="telefono" id="telefono" required>
@@ -60,11 +60,11 @@
             
         <br>
         <!------------------------------------------------------------>
-        <p>Codice carta d'identità: *codice*</p>
+        <p>Codice carta d'identità: {{this.codiceCarta}}</p>
             
         
         <!------------------------------------------------------------>
-        <p>Sesso: *sesso*</p>
+        <p>Sesso: {{this.sesso}}</p>
             
         
         <!------------------------------------------------------------>

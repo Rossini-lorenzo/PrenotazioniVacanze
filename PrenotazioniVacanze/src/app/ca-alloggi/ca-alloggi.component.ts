@@ -4,6 +4,7 @@ import {FormGroup,FormControl,FormBuilder} from '@angular/forms';
 import { Offerta } from '../dati/offerta';
 import { AlloggioGet } from '../dati/alloggio-get';
 import { Prenotazione } from '../dati/prenotazione';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-ca-alloggi',
   templateUrl: './ca-alloggi.component.html',
@@ -22,7 +23,7 @@ export class CaAlloggiComponent implements OnInit {
   prenotazione : Prenotazione;
   aGet:AlloggioGet;
 
-  constructor(private fb: FormBuilder,private utenteService : UtenteService) { 
+  constructor(private fb: FormBuilder,private utenteService : UtenteService,private router :Router) { 
    this.viaggi=[];
    this.logAdmin=utenteService.getLoggedAdmin();
    this.log=utenteService.getLogged();
@@ -53,6 +54,7 @@ export class CaAlloggiComponent implements OnInit {
       (response:any)=>{     
         alert("Alloggio prenotato e inserito nelle prenotazioni"+"\n"+
               "id prenotazione : "+response.codPrenotazione);
+              this.router.navigate(['/alloggi'])
 
 
       },
@@ -71,13 +73,15 @@ export class CaAlloggiComponent implements OnInit {
     this.utenteService.cercaAlloggi().subscribe(
       (response : any)=>{
         for(let i in response){
-          console.log(this.destinazione);
-          if(response[i].destinazione==this.destinazione&&
-            response[i].nPartecipanti==this.nPresone)
+          for(let x in  response[i].offerte){
+
+          if(response[i].offerte[x].disponibile==true&&
+            response[i].destinazione==this.destinazione&&
+            response[i].nPartecipanti==this.nPresone&&
+            response[i].offerte[x].dataInizio==this.dataInizio&&
+                response[i].offerte[x].dataFine==this.dataFine)
           {
-            for(let x in  response[i].offerte){
-               if( response[i].offerte[x].dataInizio==this.dataInizio&&
-                response[i].offerte[x].dataFine==this.dataFine){
+               
                     this.aGet= new AlloggioGet(response[i])
                     this.aGet.dataFine=this.dataInizio;
                     this.aGet.dataInizio=this.dataInizio;
@@ -85,7 +89,7 @@ export class CaAlloggiComponent implements OnInit {
                     this.aGet.prezzo=response[i].offerte[x].prezzo;
                    this.viaggi.push(this.aGet);
                    
-                }
+                
             }
           }
         }

@@ -129,6 +129,7 @@ public ResponseEntity<Object> addNewPrenotazione (@RequestBody prenotazioneGet p
   // @ResponseBody means the returned String is the n, not a view name
   // @RequestParam means it is a parameter from the GET or POST request
 	Prenotazione p = new Prenotazione();
+	offertaRepository.findById(prenotazione.getOfferta()).get().setDisponibile(false);
 	p.setOffertaPrenotazione(offertaRepository.findById(prenotazione.getOfferta()).get());
 	p.setUtente(utenteRepository.findById(prenotazione.getUtente()).get());
 	p.setnPartecipanti(prenotazione.getnPartecipanti());
@@ -155,6 +156,16 @@ public ResponseEntity <List<Prenotazione>> getPrenotazioni(@RequestParam String 
 	
 
 	 return new ResponseEntity<List<Prenotazione>>(v,HttpStatus.OK);
+
+}
+@CrossOrigin(origins="*")
+@GetMapping(path="/getUtente")
+public ResponseEntity <Object>getUtente(@RequestParam String id) {
+  // This returns a JSON or XML with the users
+	Optional<Utente> u = utenteRepository.findById(Integer.parseInt(id));
+	
+
+	 return new ResponseEntity<Object> (u,HttpStatus.OK);
 
 }
 
