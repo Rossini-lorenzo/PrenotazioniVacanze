@@ -15,6 +15,7 @@ export class CaAlloggiComponent implements OnInit {
   logAdmin:boolean;
   viaggi:AlloggioGet[];
   mioForm4:FormGroup;
+  mostra:boolean;
 
   dataInizio : Date;
   dataFine : Date;
@@ -31,6 +32,7 @@ export class CaAlloggiComponent implements OnInit {
    this.dataInizio=null;
    this.nPresone=0;
    this.destinazione="";
+   this.mostra=false;
   }
   
   ngOnInit(): void {
@@ -65,6 +67,7 @@ export class CaAlloggiComponent implements OnInit {
 
   }
   cercaAlloggi():void{
+    this.mostra=true;
     this.viaggi=[];
     this.destinazione=this.mioForm4.get("destinazione").value;
     this.dataFine=this.mioForm4.get("dataFine").value;

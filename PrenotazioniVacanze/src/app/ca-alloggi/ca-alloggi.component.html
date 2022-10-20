@@ -75,10 +75,10 @@
     
 <div class="row text-center ">
   <div class="col">
-    <button type="button" class="btn1 btn-secondary btn-sm" (click)="ordinaPerPrezzoCrescente()"> Prezzo crescente </button>
+    <i *ngIf="mostra==true"> <button type="button" class="btn1 btn-secondary btn-sm" style="margin-bottom : 10px " (click)="ordinaPerPrezzoCrescente()"> Prezzo crescente </button></i>
   </div>
   <div class="col">
-    <button type="button" class="btn1 btn-secondary btn-sm" (click)="ordinaPerPrezzoDecrescente()"> Prezzo decrescente </button>
+    <i *ngIf="mostra==true"><button type="button" class="btn1 btn-secondary btn-sm" (click)="ordinaPerPrezzoDecrescente()"> Prezzo decrescente </button></i>
   </div>
   
 </div>
