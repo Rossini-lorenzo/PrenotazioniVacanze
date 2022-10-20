@@ -101,7 +101,7 @@ export class CaAlloggiComponent implements OnInit {
     )
   }
 
-  ordinaPerPrezzo(){
+  ordinaPerPrezzoCrescente(){
       this.viaggi.sort((a,b)=> {
         if(a.prezzo>b.prezzo)
            {return 1}
@@ -109,6 +109,15 @@ export class CaAlloggiComponent implements OnInit {
            {return -1;}
         return 0;
       });
+    }
+  ordinaPerPrezzoDecrescente(){
+        this.viaggi.sort((a,b)=> {
+          if(a.prezzo<b.prezzo)
+             {return 1}
+          if(a.prezzo>b.prezzo)
+             {return -1;}
+          return 0;
+        });
 
 
   }
